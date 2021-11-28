@@ -1,28 +1,96 @@
+// Global layout
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@100;200;300;400;500;600;700&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
+  font-family: "Outfit";
+  font-weight: 400;
+  background-color: #f7f7f7;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin: 22px 28px;
+}
+
+.logo {
+  width: 2.5rem;
+  margin-right: 6px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-left {
+  display: flex;
+}
+
+.title span {
+  line-height: 18px;
+  align-self: center;
+  color: #a57f4c;
+}
+
+nav svg {
+  width: 2em;
+  color: #24463e;
 }
 
 // Video Full Cover Background
 .fullscreen {
+  position: relative;
   &-video {
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    margin-bottom: -6px;
   }
 
-  &::before {
-    content: "";
-    background: rgba(black, 0.5);
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
+  // &::before {
+  //   content: "";
+  //   background: rgba(black, 0.1);
+  //   position: absolute;
+  //   z-index: 1;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  // }
+}
+
+#overlay {
+  position: absolute; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+.overlay-title {
+  display: flex;
+}
+
+.overlay-title .title {
+  color: #f7f7f7;
 }
