@@ -28,6 +28,7 @@ nav {
 .logo {
   width: 2.5rem;
   margin-right: 6px;
+  align-self: center;
 }
 
 .title {
@@ -85,12 +86,58 @@ nav svg {
   background-color: rgba(0, 0, 0, 0.2); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay-title {
   display: flex;
+  flex-direction: column;
+}
+.overlay-title .title {
+  display: flex;
+  flex-direction: row;
 }
 
-.overlay-title .title {
+.overlay-title .title span {
   color: #f7f7f7;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.overlay-title button {
+  width: 74px;
+  font-size: 10px;
+  color: #f7f7f7;
+  background-color: #24463e;
+  border: #24463e;
+  align-self: center;
+  position: relative;
+  top: 10px;
+}
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+}
+.about-us img {
+  width: 100%;
+  margin-top: 11px;
+}
+.about-us h4 {
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.main-content {
+  margin: 30px;
+}
+
+.contact-us h4 {
+  letter-spacing: 1.5px;
+}
+
+.contact-us {
+  margin-top: 40px;
 }
