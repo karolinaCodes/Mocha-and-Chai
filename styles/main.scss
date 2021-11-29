@@ -127,12 +127,15 @@ nav .btn-dark {
   font-weight: 100;
 }
 
-.about-us {
+.about-us-container {
   display: flex;
   flex-direction: column;
+}
+
+.about-us-text {
   margin: 30px;
 }
-.about-us img {
+.about-us-text img {
   // width: 100%;
   margin-top: 11px;
   width: 100vw;
@@ -140,38 +143,42 @@ nav .btn-dark {
   left: calc(-50vw + 50%);
 }
 
-.about-us h4 {
+.about-us-text h4 {
   letter-spacing: 1.5px;
   margin-bottom: 10px;
   color: $primaryBlack;
 }
 
-.about-us h6 {
+.about-us-text h6 {
   margin-bottom: 13px;
   color: $primaryGreen;
 }
 
-.about-us p {
+.about-us-text p {
   font-weight: 300;
 }
 
-.contact-us h4,
+.contact-us-container {
+  display: flex;
+  flex-direction: column;
+}
+.contact-us-text h4,
 h5 {
   letter-spacing: 1.5px;
   color: $primaryGreen;
 }
 
-.contact-us {
+.contact-us-text {
   margin: 40px 30px;
 }
 
-.contact-us img {
+.contact-us-text img {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 40px;
 }
 
-.contact-us {
+.contact-us-text {
   color: $primaryBlack;
   font-weight: 300;
 }
@@ -197,7 +204,10 @@ footer {
 }
 
 @media only screen and (min-width: 1024px) {
-  body {
-    background: red;
+  .about-us-container {
+    flex-direction: row;
+  }
+  .contact-us-container {
+    flex-direction: row;
   }
 }
