@@ -38,7 +38,7 @@
 
   </head>
 
-  <body>
+  <body >
     <!---nav for the order page-->
     <nav>
       <div class="content-left">
@@ -59,208 +59,47 @@
     </nav>
 
 <!---image for the order page-->
-<section>
-<div >
-<img id=Header-Photo-MenuPage src="/images/menu_images/orderMenuPhoto.jpg" />
-</div>
-</section>
+<header>
+    <section>
+      <div >
+         <img id="Header-Photo-MenuPage" src="/images/menu_images/orderMenuPhoto.jpg" />
+      </div>
+    </section>
+</header>
 
 <!--Section: Content-->
 
-<div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            <img src="/images/menu_images/cappucino.png" class="img-fluid" />
-            <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-            </a>
-            </div>
-            <div class="card-body">
-            <h5 class="card-title">Cappuccino</h5>
-            <p class="card-text">
-              Dark, rich espresso lies in wait under a smoothed and stretched layer of thick milk foam. An alchemy of barista artistry and craft.
-            </p>
-            <button type="button" class="btn btn-primary">Add to Cart</button>
-            <form>
-            <label for="quantity">Qty: </label>
-            <input min="1" type="number" id="quantity" name="quantity" value="1" />
-            <style>#quantity { padding:5px; width:50px; border: 1px solid #555; }</style>
-            <form>
-            </div>
-            </div>
-            </div>
-</div>
-</section>
-
-
-<div class="col-lg-4 col-md-6 mb-4">
-  <div class="card">
-  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-  <img src="/images/menu_images/Chai_Latte.png" class="img-fluid" />
-  <a href="#!">
-  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-  </a>
-  </div>
-  <div class="card-body">
-  <h5 class="card-title">Chai Latte</h5>
-  <p class="card-text">
-    Black tea infused with cinnamon, clove and other warming spices, combined with steamed milk and topped with foam for the perfect balance of sweet and spicy. An iconic chai cup.
-  </p>
-  <button type="button" class="btn btn-primary">Add to Cart</button>
-  </div>
-  </div>
-  </div>
-</div>
-</section>
-
-<div class="col-lg-4 col-md-6 mb-4">
-  <div class="card">
-  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-  <img src="/images/menu_images/Hot_chocolate.png" class="img-fluid" />
-  <a href="#!">
-  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-  </a>
-  </div>
-  <div class="card-body">
-  <h5 class="card-title">Hot Chocolate</h5>
-  <p class="card-text">
-    Steamed milk and mocha sauce topped with sweetened whipped cream and a chocolate-flavoured drizzle. A timeless classic made to sweeten your spirits.
-  </p>
-  <button type="button" class="btn btn-primary">Add to Cart</button>
-  </div>
-  </div>
-  </div>
-</div>
-</section>
-
-
-<div class="col-lg-4 col-md-6 mb-4">
-  <div class="card">
-  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-  <img src="/images/menu_images/Berry_Smoothie.png" class="img-fluid" />
-  <a href="#!">
-  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-  </a>
-  </div>
-  <div class="card-body">
-  <h5 class="card-title">Very Berry Hibiscus Smoothie</h5>
-  <p class="card-text">
-    The sweet blackberries and tart hibiscus flavour of our Very Berry Hibiscus beverage swirl together with creamy coconut beverage and ice, creating refreshing (and violet-hued!) sips.
-  </p>
-  <button type="button" class="btn btn-primary">Add to Cart</button>
-  </div>
-  </div>
-  </div>
-
-  <div class="col-lg-4 col-md-6 mb-4">
-    <div class="card">
-    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-    <img src=" /images/menu_images/Sandwich.png" class="img-fluid" />
-    <a href="#!">
-    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-    </a>
+<% menuArray.forEach( (item)=>{     %>
+  <section>
+    <div class="col-lg-6 col-md-6 mb-4">
+                <div class="card flex-row">
+                <div class="bg-image hover-overlay ripple col-lg-6" data-mdb-ripple-color="light">
+                <img src="<%= item.url %>" class="img-fluid" />
+                <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+                </div>
+                <div class="card-body">
+                <h5 class="card-title"><%= item.title %></h5>
+                <p class="card-text">
+                  <%= item.description %>
+                </p>
+                <p class= "price-text">
+                  $<%= item.price %> </p>
+                <button type="button" class="btn btn-primary"> Add to Cart </button>
+                <form>
+                <label for="quantity"> Qty: </label>
+                <input min="1" type="number" class="quantity" name="quantity" value="1" />
+                <form>
+                </div>
+                </div>
+                </div>
     </div>
-    <div class="card-body">
-    <h5 class="card-title">Mochas Special Club Sandwich</h5>
-    <p class="card-text">
-      Mesquite smoked turkey breast, crispy bacon, ham and Monterey Jack cheese on toasted ciabatta bread with tomatoes, shredded Romaine lettuce, guacamole and mayonnaise. Served with crispy seasoned fries.
-    </p>
-    <button type="button" class="btn btn-primary">Add to Cart</button>
-    </div>
-    </div>
-    </div>
+    </section>
+      <% } ); %>
 
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card">
-      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-      <img src="/images/menu_images/Sliders.png" class="img-fluid" />
-      <a href="#!">
-      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-      </a>
+      <div class="styles_emptyBag_3gJgp" data-testid='emptyBag'>
+        <div></div>
       </div>
-      <div class="card-body">
-      <h5 class="card-title">Chicken Sliders</h5>
-      <p class="card-text">
-        Grilled chicken breast sautéed in spicy Cajun seasonings. Piled on toasted slider buns with melted Colby cheese, poached egg, lettuce, tomato and mayonnaise.
-      </p>
-      <button type="button" class="btn btn-primary">Add to Cart</button>
-      </div>
-      </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card">
-        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/images/menu_images/Croissant.png" class="img-fluid" />
-        <a href="#!">
-        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-        </div>
-        <div class="card-body">
-        <h5 class="card-title">Croissant</h5>
-        <p class="card-text">
-          This classic croissant is made with real butter to with soft, flaky layers inside.
-        </p>
-        <button type="button" class="btn btn-primary">Add to Cart</button>
-        </div>
-        </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card">
-          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-          <img src="/images/menu_images/donuts.png" class="img-fluid" />
-          <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-          </a>
-          </div>
-          <div class="card-body">
-          <h5 class="card-title">Sprinkle Donut</h5>
-          <p class="card-text">
-            Baked fresh, our bakers hand-dip, glaze and sprinkle each donut with care.
-          </p>
-          <button type="button" class="btn btn-primary">Add to Cart</button>
-          </div>
-          </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            <img src="/images/menu_images/Muffins.png" class="img-fluid" />
-            <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-            </a>
-            </div>
-            <div class="card-body">
-            <h5 class="card-title">Muffin</h5>
-            <p class="card-text">
-              A flavourful muffin with blueberries and honey. A luscious blend of bountiful goodness.
-            </p>
-            <button type="button" class="btn btn-primary">Add to Cart</button>
-            </div>
-            </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="/images/menu_images/Chocolatechip_cookie.png" class="img-fluid" />
-              <a href="#!">
-              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </a>
-              </div>
-              <div class="card-body">
-              <h5 class="card-title">Chocolate Chip Cookie</h5>
-              <p class="card-text">
-                A chewy cookie loaded with premium semisweet chocolate chunks. An ahh moment full of seriously, sweet, lingering yum.
-              </p>
-              <button type="button" class="btn btn-primary">Add to Cart</button>
-              </div>
-              </div>
-              </div>
-</div>
-</section>
-
   </body>
 </html>
