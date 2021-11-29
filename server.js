@@ -77,7 +77,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/orderPage", (req, res) => {
-  res.render("orderPage");
+  const templateVars = { menuArray: menu }
+  res.render("orderPage", templateVars);
 });
 
 app.get("/resturantPage", (req, res) => {
