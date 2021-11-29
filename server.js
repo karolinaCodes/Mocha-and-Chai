@@ -73,15 +73,6 @@ app.get("/", (req, res) => {
   res.render("index", templeVars);
 });
 
-app.get("/orderPage", (req, res) => {
-  const templateVars = { menuArray: menu };
-  res.render("orderPage", templateVars);
-});
-
-app.get("/resturantPage", (req, res) => {
-  res.render("resturantPage");
-});
-
 app.listen(PORT, () => {
   console.log(`Mocha & Chai Server listening on port ${PORT}`);
 });
