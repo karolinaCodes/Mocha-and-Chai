@@ -11,7 +11,7 @@ module.exports = (db) => {
     db.query(`SELECT * FROM customers;`)
       .then(data => {
         const menu = data.rows;
-        res.json({ menu });
+        res.render("resturantPage");
       })
       .catch(err => {
         res

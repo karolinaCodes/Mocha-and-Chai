@@ -39,5 +39,14 @@
 
   <body>
     <h1>hello</h1>
+
+    <table>
+      <tbody>
+          <% menuArray.forEach( (item)=>{     %>
+              <tr><td><%= item.url %></td><td><%= item.url %></td></tr>
+                <img src=<%= item.url%> />
+                  <% } ); %>
+      </tbody>
+      </table>
   </body>
 </html>
