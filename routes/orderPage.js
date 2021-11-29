@@ -12,7 +12,6 @@ module.exports = (db) => {
       .then((data) => {
         const menu = data.rows;
         const templateVars = { menuArray: menu };
-        console.log(templateVars.menuArray);
         res.render("orderPage", templateVars);
       })
       .catch((err) => {
