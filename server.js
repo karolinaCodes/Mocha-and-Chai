@@ -50,13 +50,14 @@ const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const orderPageRoutes = require("./routes/orderPage");
 const resturantPageRoutes = require("./routes/resturantPage");
+const productsRoutes = require("./routes/products");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/orderPage", orderPageRoutes(db));
 app.use("/resturantPage", resturantPageRoutes(db));
 app.use("/api/users", usersRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
+app.use("/api/products", productsRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
@@ -71,15 +72,6 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.get("/", (req, res) => {
   const templeVars = { MAPS_API: process.env.MAPS_API };
   res.render("index", templeVars);
-});
-
-app.get("/orderPage", (req, res) => {
-  const templateVars = { menuArray: menu }
-  res.render("orderPage", templateVars);
-});
-
-app.get("/resturantPage", (req, res) => {
-  res.render("resturantPage");
 });
 
 app.listen(PORT, () => {
