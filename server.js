@@ -39,6 +39,8 @@ const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const orderPageRoutes = require("./routes/orderPage");
 const resturantPageRoutes = require("./routes/resturantPage");
+
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/orderPage",orderPageRoutes(db));
@@ -54,6 +56,14 @@ app.use("/api/widgets", widgetsRoutes(db));
 
 app.get("/", (req, res) => {
   res.render("index");
+});
+
+app.get("/orderPage", (req, res) => {
+  res.render("orderPage");
+});
+
+app.get("/resturantPage", (req, res) => {
+  res.render("resturantPage");
 });
 
 app.listen(PORT, () => {
