@@ -2,6 +2,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@100;200;300;400;500;600;700&display=swap");
 
+$primaryGreen: #24463e;
+$primaryBlack: #222222;
+$navWhite: #f7f7f7;
+$backgroundWhite: #ffffff;
+
 html {
   box-sizing: border-box;
 }
@@ -15,14 +20,23 @@ body {
   min-height: 100vh;
   font-family: "Outfit";
   font-weight: 400;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   font-size: 20px;
-  margin: 22px 28px;
+  padding: 22px 26px 22px 28px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: #f7f7f7;
+}
+
+img {
+  width: 100%;
 }
 
 .logo {
@@ -46,9 +60,14 @@ nav {
   color: #a57f4c;
 }
 
-nav svg {
-  width: 2em;
-  color: #24463e;
+// nav svg {
+//   width: 2em;
+//   color: $primaryGreen;
+// }
+
+nav .btn-dark {
+  color: #f7f7f7;
+  background-color: $primaryGreen;
 }
 
 // Video Full Cover Background
@@ -61,6 +80,7 @@ nav svg {
     width: 100%;
     height: 100%;
     margin-bottom: -6px;
+    margin-top: 84px;
   }
 
   // &::before {
@@ -85,10 +105,11 @@ nav svg {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.2); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 84px;
+  height: 218px;
 }
 
 .overlay-title {
@@ -106,38 +127,77 @@ nav svg {
   font-weight: 100;
 }
 
-.overlay-title button {
-  width: 74px;
-  font-size: 10px;
-  color: #f7f7f7;
-  background-color: #24463e;
-  border: #24463e;
-  align-self: center;
-  position: relative;
-  top: 10px;
-}
-
 .about-us {
   display: flex;
   flex-direction: column;
+  margin: 30px;
 }
 .about-us img {
-  width: 100%;
+  // width: 100%;
   margin-top: 11px;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
 }
+
 .about-us h4 {
   letter-spacing: 1.5px;
   margin-bottom: 10px;
+  color: $primaryBlack;
 }
 
-.main-content {
-  margin: 30px;
+.about-us h6 {
+  margin-bottom: 13px;
+  color: $primaryGreen;
 }
 
-.contact-us h4 {
+.about-us p {
+  font-weight: 300;
+}
+
+.contact-us h4,
+h5 {
   letter-spacing: 1.5px;
+  color: $primaryGreen;
 }
 
 .contact-us {
-  margin-top: 40px;
+  margin: 40px 30px;
+}
+
+.contact-us img {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.contact-us {
+  color: $primaryBlack;
+  font-weight: 300;
+}
+
+.footer-img {
+  // width: 100%;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  object-position: 20% 10%;
+}
+
+footer {
+  text-align: center;
+  background-color: $navWhite;
+  margin: 0;
+  padding: 15px;
+  height: 40px;
+}
+
+.map {
+  padding: 0px 30px 40px 30px;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    background: red;
+  }
 }

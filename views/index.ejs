@@ -52,7 +52,7 @@
     <!-- Meta Tags -->
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+      content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no"
     />
   </head>
 
@@ -65,20 +65,9 @@
           <span>& Chai</span>
         </div>
       </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        />
-      </svg>
+      <button type="button" class="btn btn-dark" data-mdb-ripple-color="dark">
+        Order Now
+      </button>
     </nav>
 
     <div class="fullscreen">
@@ -88,13 +77,6 @@
           <div class="title">
             <span>Mocha & Chai</span>
           </div>
-          <button
-            type="button"
-            class="btn btn-light"
-            data-mdb-ripple-color="dark"
-          >
-            Order Now
-          </button>
         </div>
       </div>
 
@@ -106,29 +88,30 @@
     <div class="main-content">
       <div class="about-us">
         <h4>Our Story</h4>
-        <p>
+        <h6>
           Mocha & Chai brings a fresh take on the Parisian café experience to
-          Toronto’s King West. Located on the ground floor of Bisha Hotel,
-          French Made is the ideal spot for your morning coffee, mid-afternoon
-          treat and everything in between. Open seven days a week, French Made
-          offers a variety of delicious pastries baked in house daily, as well
-          as a selection of fresh baked goods and hand-pressed gourmet
-          sandwiches; perfect for breakfast or lunch on the go. Our
-          ingredient-focused fare pairs perfectly with custom roasted and
-          sourced De Melo Palheta Espresso.
-        </p>
-        <img src="/images/steam.jpg" />
-      </div>
-      <div class="contact-us">
-        <h4>Contact</h4>
+          Toronto’s King West.
+        </h6>
         <p>
-          info@frenchmadetoronto.com<br />
-          437.800.5936 <br />
+          Located on the ground floor of Bisha Hotel, Mocha & Chai is the ideal
+          spot for your morning coffee, mid-afternoon treat and everything in
+          between. Open seven days a week, Mocha & Chai offers a selection of
+          fresh baked goods and hand-pressed gourmet sandwiches; perfect for
+          breakfast or lunch on the go. Our ingredient-focused fare pairs
+          perfectly with custom roasted and sourced De Melo Palheta Espresso.
         </p>
-        <h4>Hours</h4>
+      </div>
+      <img src="/images/steam.jpg" />
+      <div class="contact-us">
+        <h4>Contact Us</h4>
+        <p>
+          info@mochaandchai.com<br />
+          416.123.4567 <br />
+        </p>
+        <h5>Hours</h5>
 
         <p>7 AM – 7 PM daily</p>
-        <h4>Location</h4>
+        <h5>Location</h5>
         <p>
           Bisha Hotel <br />
           Ground Floor <br />
@@ -136,6 +119,15 @@
           Toronto, On M5V 2G3
         </p>
       </div>
+      <img
+        width="600"
+        src="https://maps.googleapis.com/maps/api/staticmap?center= 43.645297,-79.392397&zoom=16&size=400x400&scale=2&maptype=roadmap
+&markers=color:red%7Clabel:%7C40.702147,Bisha+Hotel+80+Blue+Jays+Way+Toronto+On+M5V+2G3&key=<%=MAPS_API%>"
+        class="map"
+      />
+
+      <img class="footer-img" src="/images/latte-three.jpeg" />
+      <footer><p>©2021 by Mocha + Chai. All rights reserved.</p></footer>
     </div>
   </body>
 </html>

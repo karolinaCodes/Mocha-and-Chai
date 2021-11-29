@@ -49,7 +49,8 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
-  res.render("index");
+  const templeVars = { MAPS_API: process.env.MAPS_API };
+  res.render("index", templeVars);
 });
 
 app.listen(PORT, () => {
