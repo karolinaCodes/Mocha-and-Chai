@@ -2,6 +2,7 @@
 //  Create webpage for the customer for Orders
 // ======================================================
 
+const { Template } = require("ejs");
 const express = require("express");
 const router = express.Router();
 
@@ -10,7 +11,9 @@ module.exports = (db) => {
     db.query(`SELECT * FROM products;`)
       .then((data) => {
         const menu = data.rows;
-        res.json({ menu });
+        const templateVars = { menuArray: menu };
+        console.log(templateVars.menuArray);
+        res.render("orderPage", templateVars);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
