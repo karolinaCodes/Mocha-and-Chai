@@ -1,4 +1,3 @@
-
 //=======================================================
 // Project:         Mocha & Chai
 //
@@ -52,11 +51,10 @@ const widgetsRoutes = require("./routes/widgets");
 const orderPageRoutes = require("./routes/orderPage");
 const resturantPageRoutes = require("./routes/resturantPage");
 
-
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.use("/orderPage",orderPageRoutes(db));
-app.use("/resturantPage",resturantPageRoutes(db));
+app.use("/orderPage", orderPageRoutes(db));
+app.use("/resturantPage", resturantPageRoutes(db));
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 
@@ -65,7 +63,6 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
 
 //=======================================================
 //                  GET REQUESTS
@@ -88,7 +85,6 @@ app.get("/resturantPage", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Mocha & Chai Server listening on port ${PORT}`);
 });
-
 
 //=======================================================
 //              -  MAJOR RELEASE 1.0 -
