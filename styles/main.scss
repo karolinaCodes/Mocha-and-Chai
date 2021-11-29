@@ -23,6 +23,7 @@ body {
   font-family: "Outfit";
   font-weight: 400;
   background-color: #ffffff;
+  margin: 0;
 }
 
 nav {
@@ -43,8 +44,8 @@ img {
 
 .logo {
   width: 2.5rem;
-  margin-right: 6px;
   align-self: center;
+  margin-right: 5px;
 }
 
 .title {
@@ -110,8 +111,8 @@ nav .btn-dark {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 84px;
-  height: 218px;
+  // margin-top: 84px;
+  // height: 218px;
 }
 
 .overlay-title {
@@ -190,34 +191,39 @@ h5 {
 }
 
 footer {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: $navWhite;
-  margin: 0;
-  padding: 15px;
-  height: 40px;
+  height: 95px;
+  margin-top: 20px;
 }
 
 .map {
   padding: 0px 30px 40px 30px;
+  min-width: 750px;
 }
 
 .nav-links {
-  display: flex;
   list-style: none;
+  margin: 0px 0px 0px 30px;
+  align-self: center;
+  justify-self: center;
+  display: none;
   & li {
-    margin-right: 20px;
+    margin-right: 45px;
     color: $navLinkBrown;
     cursor: pointer;
     font-size: 30px;
     & a {
       text-decoration: none;
-      color: $navLinkBrown !important;
+      color: $navLinkBrown;
     }
   }
 }
 
 a:hover {
-  color: $gold;
+  color: $gold !important;
 }
 
 html {
@@ -230,6 +236,7 @@ html {
   }
   .logo {
     width: 4rem;
+    margin-right: 11px;
   }
   .content-left span {
     font-size: 30px;
@@ -241,12 +248,16 @@ html {
     height: 60px;
     font-size: 25px;
   }
+  .nav-links {
+    display: flex;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   #about-us-container {
     flex-direction: row;
-    padding: 150px;
+    justify-content: space-between;
+    padding: 150px 150px 150px 130px;
   }
   #contact-us-container {
     flex-direction: row;
@@ -256,10 +267,11 @@ html {
 
   #about-us-container img {
     width: 50%;
+    min-width: 50%;
   }
 
   #contact-us-container img {
-    width: 50%;
+    width: 40%;
   }
 
   .bottom {
@@ -278,6 +290,8 @@ html {
 
   p {
     font-size: 28px;
+
+    line-height: 60px;
   }
 
   .about-us-text {
@@ -285,10 +299,28 @@ html {
   }
 
   .contact-us-text div {
-    margin-top: 35px;
+    margin-top: 45px;
   }
 
   h5 {
-    font-size: 30px;
+    font-size: 40px;
+  }
+
+  .overlay-title .title span {
+    font-size: 70px;
+    font-weight: 200;
+  }
+
+  .contact-us-text {
+    margin-left: 200px;
+  }
+
+  nav {
+    padding: 30px;
+  }
+
+  .overlay-title .logo {
+    width: 14rem;
+    margin-bottom: 40px;
   }
 }
