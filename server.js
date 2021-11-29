@@ -1,3 +1,15 @@
+
+//=======================================================
+// Project:         Mocha & Chai
+//
+// Author:          Karolina, Srimantika and Maninder
+// Submitted:       November 26, 2021
+// Organization:    Lighthouse Labs
+//
+//=======================================================
+//                 SERVER SETUP
+//=======================================================
+
 // load .env data into process.env
 require("dotenv").config();
 
@@ -37,22 +49,52 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
+const orderPageRoutes = require("./routes/orderPage");
+const resturantPageRoutes = require("./routes/resturantPage");
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
+app.use("/orderPage",orderPageRoutes(db));
+app.use("/resturantPage",resturantPageRoutes(db));
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+
+//=======================================================
+//                  GET REQUESTS
+//=======================================================
+
 app.get("/", (req, res) => {
   const templeVars = { MAPS_API: process.env.MAPS_API };
   res.render("index", templeVars);
 });
 
-app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
+app.get("/orderPage", (req, res) => {
+  res.render("orderPage");
 });
+
+app.get("/resturantPage", (req, res) => {
+  res.render("resturantPage");
+});
+
+app.listen(PORT, () => {
+  console.log(`Mocha & Chai Server listening on port ${PORT}`);
+});
+
+
+//=======================================================
+//              -  MAJOR RELEASE 1.0 -
+//=======================================================
+
+//=======================================================
+//=======================================================
+//                      END
+//=======================================================
+//=======================================================
