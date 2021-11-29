@@ -30,6 +30,7 @@
     <!-- <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" /> -->
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/orderMenu.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -38,15 +39,223 @@
   </head>
 
   <body>
-    <h1>hello</h1>
+    <!---nav for the order page-->
+    <nav>
+      <div class="content-left">
+        <img src="/images/coffee-beans.png" class="logo" />
+        <div class="title">
+          <span>Mocha </span>
+          <span>& Chai</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#about-us-container">About</a></li>
+          <li><a href="#contact-us-container">Contact us</a></li>
+          <li><a href=#>Menu</a></li>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-dark" data-mdb-ripple-color="dark">
+        Order Now
+      </button>
+    </nav>
 
-    <table>
-      <tbody>
-          <% menuArray.forEach( (item)=>{     %>
-              <tr><td><%= item.url %></td><td><%= item.url %></td></tr>
-                <img src=<%= item.url%> />
-                  <% } ); %>
-      </tbody>
-      </table>
+<!---image for the order page-->
+<section>
+<div >
+<img id=Header-Photo-MenuPage src="/images/menu_images/orderMenuPhoto.jpg" />
+</div>
+</section>
+
+<!--Section: Content-->
+
+<div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="/images/menu_images/cappucino.png" class="img-fluid" />
+            <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+            </div>
+            <div class="card-body">
+            <h5 class="card-title">Cappuccino</h5>
+            <p class="card-text">
+              Dark, rich espresso lies in wait under a smoothed and stretched layer of thick milk foam. An alchemy of barista artistry and craft.
+            </p>
+            <a href="#!" class="btn btn-primary">Button</a>
+            </div>
+            </div>
+            </div>
+</div>
+</section>
+
+
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card">
+  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+  <img src="/images/menu_images/Chai_Latte.png" class="img-fluid" />
+  <a href="#!">
+  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+  </a>
+  </div>
+  <div class="card-body">
+  <h5 class="card-title">Chai Latte</h5>
+  <p class="card-text">
+    Black tea infused with cinnamon, clove and other warming spices, combined with steamed milk and topped with foam for the perfect balance of sweet and spicy. An iconic chai cup.
+  </p>
+  <a href="#!" class="btn btn-primary">Button</a>
+  </div>
+  </div>
+  </div>
+</div>
+</section>
+
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card">
+  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+  <img src="/images/menu_images/Hot_chocolate.png" class="img-fluid" />
+  <a href="#!">
+  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+  </a>
+  </div>
+  <div class="card-body">
+  <h5 class="card-title">Hot Chocolate</h5>
+  <p class="card-text">
+    Steamed milk and mocha sauce topped with sweetened whipped cream and a chocolate-flavoured drizzle. A timeless classic made to sweeten your spirits.
+  </p>
+  <a href="#!" class="btn btn-primary">Button</a>
+  </div>
+  </div>
+  </div>
+</div>
+</section>
+
+
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="card">
+  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+  <img src="/images/menu_images/Berry_Smoothie.png" class="img-fluid" />
+  <a href="#!">
+  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+  </a>
+  </div>
+  <div class="card-body">
+  <h5 class="card-title">Very Berry Hibiscus Smoothie</h5>
+  <p class="card-text">
+    The sweet blackberries and tart hibiscus flavour of our Very Berry Hibiscus beverage swirl together with creamy coconut beverage and ice, creating refreshing (and violet-hued!) sips.
+  </p>
+  <a href="#!" class="btn btn-primary">Button</a>
+  </div>
+  </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 mb-4">
+    <div class="card">
+    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+    <img src=" /images/menu_images/Sandwich.png" class="img-fluid" />
+    <a href="#!">
+    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+    </a>
+    </div>
+    <div class="card-body">
+    <h5 class="card-title">Mochas Special Club Sandwich</h5>
+    <p class="card-text">
+      Mesquite smoked turkey breast, crispy bacon, ham and Monterey Jack cheese on toasted ciabatta bread with tomatoes, shredded Romaine lettuce, guacamole and mayonnaise. Served with crispy seasoned fries.
+    </p>
+    <a href="#!" class="btn btn-primary">Button</a>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card">
+      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+      <img src="/images/menu_images/Sliders.png" class="img-fluid" />
+      <a href="#!">
+      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+      </a>
+      </div>
+      <div class="card-body">
+      <h5 class="card-title">Chicken Sliders</h5>
+      <p class="card-text">
+        Grilled chicken breast sautéed in spicy Cajun seasonings. Piled on toasted slider buns with melted Colby cheese, poached egg, lettuce, tomato and mayonnaise.                                             
+      </p>
+      <a href="#!" class="btn btn-primary">Button</a>
+      </div>
+      </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img src="/images/menu_images/Berry_Smoothie.png" class="img-fluid" />
+        <a href="#!">
+        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        </a>
+        </div>
+        <div class="card-body">
+        <h5 class="card-title">Very Berry Hibiscus Smoothie</h5>
+        <p class="card-text">
+          The sweet blackberries and tart hibiscus flavour of our Very Berry Hibiscus beverage swirl together with creamy coconut beverage and ice, creating refreshing (and violet-hued!) sips.
+        </p>
+        <a href="#!" class="btn btn-primary">Button</a>
+        </div>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+          <img src="/images/menu_images/Berry_Smoothie.png" class="img-fluid" />
+          <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+          </div>
+          <div class="card-body">
+          <h5 class="card-title">Very Berry Hibiscus Smoothie</h5>
+          <p class="card-text">
+            The sweet blackberries and tart hibiscus flavour of our Very Berry Hibiscus beverage swirl together with creamy coconut beverage and ice, creating refreshing (and violet-hued!) sips.
+          </p>
+          <a href="#!" class="btn btn-primary">Button</a>
+          </div>
+          </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="/images/menu_images/Berry_Smoothie.png" class="img-fluid" />
+            <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+            </div>
+            <div class="card-body">
+            <h5 class="card-title">Very Berry Hibiscus Smoothie</h5>
+            <p class="card-text">
+              The sweet blackberries and tart hibiscus flavour of our Very Berry Hibiscus beverage swirl together with creamy coconut beverage and ice, creating refreshing (and violet-hued!) sips.
+            </p>
+            <a href="#!" class="btn btn-primary">Button</a>
+            </div>
+            </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="/images/menu_images/Berry_Smoothie.png" class="img-fluid" />
+              <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+              </div>
+              <div class="card-body">
+              <h5 class="card-title">Very Berry Hibiscus Smoothie</h5>
+              <p class="card-text">
+                The sweet blackberries and tart hibiscus flavour of our Very Berry Hibiscus beverage swirl together with creamy coconut beverage and ice, creating refreshing (and violet-hued!) sips.
+              </p>
+              <a href="#!" class="btn btn-primary">Button</a>
+              </div>
+              </div>
+              </div>
+</div>
+</section>
+
   </body>
 </html>
