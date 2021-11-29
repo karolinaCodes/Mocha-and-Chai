@@ -1,3 +1,15 @@
+
+//=======================================================
+// Project:         Mocha & Chai
+//
+// Author:          Karolina, Srimantika and Maninder
+// Submitted:       November 26, 2021
+// Organization:    Lighthouse Labs
+//
+//=======================================================
+//                 SERVER SETUP
+//=======================================================
+
 // load .env data into process.env
 require("dotenv").config();
 
@@ -54,6 +66,11 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+
+//=======================================================
+//                  GET REQUESTS
+//=======================================================
+
 app.get("/", (req, res) => {
   res.render("index");
 });
@@ -67,5 +84,16 @@ app.get("/resturantPage", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
+  console.log(`Mocha & Chai Server listening on port ${PORT}`);
 });
+
+
+//=======================================================
+//              -  MAJOR RELEASE 1.0 -
+//=======================================================
+
+//=======================================================
+//=======================================================
+//                      END
+//=======================================================
+//=======================================================
