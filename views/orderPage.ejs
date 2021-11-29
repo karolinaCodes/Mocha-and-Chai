@@ -71,7 +71,7 @@
 
 <% menuArray.forEach( (item)=>{     %>
   <section>
-    <div class="col-lg-6 col-md-6 mb-4">
+    <div class="col-lg-6 col-md-6 mb-4" id=<%= item.id%> >
                 <div class="card flex-row">
                 <div class="bg-image hover-overlay ripple col-lg-6" data-mdb-ripple-color="light">
                 <img src="<%= item.url %>" class="img-fluid" />
@@ -80,6 +80,7 @@
                 </a>
                 </div>
                 <div class="card-body">
+                  <div>
                 <h5 class="card-title"><%= item.title %></h5>
                 <p class="card-text">
                   <%= item.description %>
@@ -98,8 +99,25 @@
     </section>
       <% } ); %>
 
-      <div class="styles_emptyBag_3gJgp" data-testid='emptyBag'>
-        <div></div>
-      </div>
+
+      <div class="row justify-content-around">
+        <div class="col-md-5">
+            <div class="card border-0">
+                <div class="card-header pb-0">
+                    <h2 class="card-title space ">Your Order</h2>
+                    <h6>Location</h6>
+              <p>
+                Bisha Hotel Ground Floor 80 Blue Jays Way Toronto, On M5V 2G3
+              </p>
+                <p>Order #</p>
+                    <p class="card-text text-muted mt-4 space"></p>
+                    <hr class="my-0">
+                    <p class="Total_Summary"></p>
+                    <button class="Order_button"type="button"> Order </button>
+                </div>
+                </div>
+            </div>
+        </div>
+
   </body>
 </html>
