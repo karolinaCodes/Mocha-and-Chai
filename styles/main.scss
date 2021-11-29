@@ -1,28 +1,326 @@
+// Global layout
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@100;200;300;400;500;600;700&display=swap");
+
+$primaryGreen: #24463e;
+$primaryBlack: #222222;
+$navWhite: #f7f7f7;
+$backgroundWhite: #ffffff;
+$navLinkBrown: #666058;
+$gold: #ba9867;
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
+  font-family: "Outfit";
+  font-weight: 400;
+  background-color: #ffffff;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  padding: 22px 26px 22px 28px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: #f7f7f7;
+}
+
+img {
+  width: 100%;
+}
+
+.logo {
+  width: 2.5rem;
+  align-self: center;
+  margin-right: 5px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-left {
+  display: flex;
+}
+
+.title span {
+  line-height: 18px;
+  align-self: center;
+  color: #a57f4c;
+}
+
+// nav svg {
+//   width: 2em;
+//   color: $primaryGreen;
+// }
+
+nav .btn-dark {
+  color: #f7f7f7;
+  background-color: $primaryGreen;
 }
 
 // Video Full Cover Background
 .fullscreen {
+  position: relative;
   &-video {
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    margin-bottom: -6px;
+    margin-top: 84px;
   }
 
-  &::before {
-    content: "";
-    background: rgba(black, 0.5);
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  // &::before {
+  //   content: "";
+  //   background: rgba(black, 0.1);
+  //   position: absolute;
+  //   z-index: 1;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  // }
+}
+
+#overlay {
+  position: absolute; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // margin-top: 84px;
+  // height: 218px;
+}
+
+.overlay-title {
+  display: flex;
+  flex-direction: column;
+}
+.overlay-title .title {
+  display: flex;
+  flex-direction: row;
+}
+
+.overlay-title .title span {
+  color: #f7f7f7;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+#about-us-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-us-text {
+  margin: 30px;
+}
+.about-us-text img {
+  // width: 100%;
+  margin-top: 11px;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+}
+
+.about-us-text h4 {
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  color: $primaryBlack;
+}
+
+.about-us-text h6 {
+  margin-bottom: 13px;
+  color: $primaryGreen;
+}
+
+.about-us-text p {
+  font-weight: 300;
+}
+
+#contact-us-container {
+  display: flex;
+  flex-direction: column;
+}
+.contact-us-text h4,
+h5 {
+  letter-spacing: 1.5px;
+  color: $primaryGreen;
+}
+
+.contact-us-text {
+  margin: 40px 30px;
+}
+
+.contact-us-text img {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.contact-us-text {
+  color: $primaryBlack;
+  font-weight: 300;
+}
+
+.footer-img {
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $navWhite;
+  height: 95px;
+  margin-top: 20px;
+}
+
+.map {
+  padding: 0px 30px 40px 30px;
+  min-width: 750px;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0px 0px 0px 30px;
+  align-self: center;
+  justify-self: center;
+  display: none;
+  & li {
+    margin-right: 45px;
+    color: $navLinkBrown;
+    cursor: pointer;
+    font-size: 30px;
+    & a {
+      text-decoration: none;
+      color: $navLinkBrown;
+    }
+  }
+}
+
+a:hover {
+  color: $gold !important;
+}
+
+html {
+  scroll-padding-top: 108px; /* height of sticky header */
+}
+
+@media only screen and (min-width: 750px) {
+  body {
+    font-size: 25px;
+  }
+  .logo {
+    width: 4rem;
+    margin-right: 11px;
+  }
+  .content-left span {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .btn-dark {
+    width: 170px;
+    height: 60px;
+    font-size: 25px;
+  }
+  .nav-links {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #about-us-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 150px 150px 150px 130px;
+  }
+  #contact-us-container {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 100px;
+  }
+
+  #about-us-container img {
+    width: 50%;
+    min-width: 50%;
+  }
+
+  #contact-us-container img {
+    width: 40%;
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  h4 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  h6 {
+    font-size: 35px;
+  }
+
+  p {
+    font-size: 28px;
+
+    line-height: 60px;
+  }
+
+  .about-us-text {
+    margin-right: 140px;
+  }
+
+  .contact-us-text div {
+    margin-top: 45px;
+  }
+
+  h5 {
+    font-size: 40px;
+  }
+
+  .overlay-title .title span {
+    font-size: 70px;
+    font-weight: 200;
+  }
+
+  .contact-us-text {
+    margin-left: 200px;
+  }
+
+  nav {
+    padding: 30px;
+  }
+
+  .overlay-title .logo {
+    width: 14rem;
+    margin-bottom: 40px;
   }
 }

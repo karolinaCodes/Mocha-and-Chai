@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Mocha + Chai</title>
+    <title>Mocha & Chai</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,12 +16,29 @@
       rel="stylesheet"
     />
 
-    <!-- Bootstrap -->
+    <!-- Font Awesome -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="icon" href="/images/coffee-beans-white.png" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+
+    <!-- MDB -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"
     />
 
     <!-- <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" /> -->
@@ -31,14 +48,100 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- Meta Tags -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no"
+    />
   </head>
 
   <body>
+    <nav>
+      <div class="content-left">
+        <img src="/images/coffee-beans.png" class="logo" />
+        <div class="title">
+          <span>Mocha </span>
+          <span>& Chai</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#about-us-container">About</a></li>
+          <li><a href="#contact-us-container">Contact us</a></li>
+          <li><a href=#>Menu</a></li>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-dark" data-mdb-ripple-color="dark">
+        Order Now
+      </button>
+    </nav>
+
     <div class="fullscreen">
-      <!-- <img src="/images/nathan-dumlao-KixfBEdyp64-unsplash.jpg" /> -->
+      <div id="overlay">
+        <div class="overlay-title">
+          <img src="/images/coffee-beans.png" class="logo" />
+          <div class="title">
+            <span>Mocha & Chai</span>
+          </div>
+        </div>
+      </div>
+
       <video loop muted autoplay poster="" class="fullscreen-video">
         <source src="/videos/video2.mp4" type="video/mp4" />
       </video>
+    </div>
+    <div class="main-content">
+      <div id="about-us-container">
+        <div class="about-us-text">
+          <h4>Our Story</h4>
+          <h6>
+            Mocha & Chai brings a fresh take on the Parisian café experience to
+            Toronto’s King West.
+          </h6>
+          <p>
+            Located on the ground floor of Bisha Hotel, Mocha & Chai is the
+            ideal spot for your morning coffee, mid-afternoon treat and
+            everything in between. Open seven days a week, Mocha & Chai offers a
+            selection of fresh baked goods and hand-pressed gourmet sandwiches;
+            perfect for breakfast or lunch on the go. Our ingredient-focused
+            fare pairs perfectly with custom roasted and sourced De Melo Palheta
+            Espresso.
+          </p>
+        </div>
+        <img src="/images/steam.jpg" />
+      </div>
+      <div class="bottom">
+        <div id="contact-us-container">
+          <div class="contact-us-text">
+            <h4>Contact Us</h4>
+              <p>
+                info@mochaandchai.com<br />
+                416.123.4567 <br />
+              </p>
+            <div>
+              <h5>Hours</h5>
+
+              <p>7 AM – 7 PM daily</p>
+            </div>
+            <div>
+              <h5>Location</h5>
+              <p>
+                Bisha Hotel <br />
+                Ground Floor <br />
+                80 Blue Jays Way <br />
+                Toronto, On M5V 2G3
+              </p>
+            </div>
+          </div>
+          <img
+            width="600"
+            src="https://maps.googleapis.com/maps/api/staticmap?center= 43.645297,-79.392397&zoom=16&size=400x400&scale=2&maptype=roadmap
+&markers=color:red%7Clabel:%7C40.702147,Bisha+Hotel+80+Blue+Jays+Way+Toronto+On+M5V+2G3&key=<%=MAPS_API%>"
+            class="map"
+          />
+        </div>
+        <img class="footer-img" src="/images/latte-three.jpeg" />
+      </div>
+      <footer><span>©2021 by Mocha + Chai. All rights reserved.</sp></footer>
     </div>
   </body>
 </html>
