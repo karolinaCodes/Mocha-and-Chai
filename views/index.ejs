@@ -64,6 +64,11 @@
           <span>Mocha </span>
           <span>& Chai</span>
         </div>
+        <ul class="nav-links">
+          <li><a href="#about-us-container">About</a></li>
+          <li><a href="#contact-us-container">Contact us</a></li>
+          <li>Menu</li>
+        </ul>
       </div>
       <button type="button" class="btn btn-dark" data-mdb-ripple-color="dark">
         Order Now
@@ -86,7 +91,7 @@
       </video>
     </div>
     <div class="main-content">
-      <div class="about-us-container">
+      <div id="about-us-container">
         <div class="about-us-text">
           <h4>Our Story</h4>
           <h6>
@@ -105,32 +110,40 @@
         </div>
         <img src="/images/steam.jpg" />
       </div>
-      <div class="contact-us-container">
-        <div class="contact-us-text">
-          <h4>Contact Us</h4>
-          <p>
-            info@mochaandchai.com<br />
-            416.123.4567 <br />
-          </p>
-          <h5>Hours</h5>
+      <div class="bottom">
+        <div id="contact-us-container">
+          <div class="contact-us-text">
+            <h4>Contact Us</h4>
+            <div>
+              <p>
+                info@mochaandchai.com<br />
+                416.123.4567 <br />
+              </p>
+            </div>
+            <div>
+              <h5>Hours</h5>
 
-          <p>7 AM – 7 PM daily</p>
-          <h5>Location</h5>
-          <p>
-            Bisha Hotel <br />
-            Ground Floor <br />
-            80 Blue Jays Way <br />
-            Toronto, On M5V 2G3
-          </p>
-        </div>
-        <img
-          width="600"
-          src="https://maps.googleapis.com/maps/api/staticmap?center= 43.645297,-79.392397&zoom=16&size=400x400&scale=2&maptype=roadmap
+              <p>7 AM – 7 PM daily</p>
+            </div>
+            <div>
+              <h5>Location</h5>
+              <p>
+                Bisha Hotel <br />
+                Ground Floor <br />
+                80 Blue Jays Way <br />
+                Toronto, On M5V 2G3
+              </p>
+            </div>
+          </div>
+          <img
+            width="600"
+            src="https://maps.googleapis.com/maps/api/staticmap?center= 43.645297,-79.392397&zoom=16&size=400x400&scale=2&maptype=roadmap
 &markers=color:red%7Clabel:%7C40.702147,Bisha+Hotel+80+Blue+Jays+Way+Toronto+On+M5V+2G3&key=<%=MAPS_API%>"
-          class="map"
-        />
+            class="map"
+          />
+        </div>
+        <img class="footer-img" src="/images/latte-three.jpeg" />
       </div>
-      <img class="footer-img" src="/images/latte-three.jpeg" />
       <footer><p>©2021 by Mocha + Chai. All rights reserved.</p></footer>
     </div>
   </body>

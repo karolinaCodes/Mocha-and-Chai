@@ -6,6 +6,8 @@ $primaryGreen: #24463e;
 $primaryBlack: #222222;
 $navWhite: #f7f7f7;
 $backgroundWhite: #ffffff;
+$navLinkBrown: #666058;
+$gold: #ba9867;
 
 html {
   box-sizing: border-box;
@@ -127,7 +129,7 @@ nav .btn-dark {
   font-weight: 100;
 }
 
-.about-us-container {
+#about-us-container {
   display: flex;
   flex-direction: column;
 }
@@ -158,7 +160,7 @@ nav .btn-dark {
   font-weight: 300;
 }
 
-.contact-us-container {
+#contact-us-container {
   display: flex;
   flex-direction: column;
 }
@@ -184,11 +186,7 @@ h5 {
 }
 
 .footer-img {
-  // width: 100%;
-  width: 100vw;
-  position: relative;
-  left: calc(-50vw + 50%);
-  object-position: 20% 10%;
+  width: 100%;
 }
 
 footer {
@@ -203,11 +201,94 @@ footer {
   padding: 0px 30px 40px 30px;
 }
 
-@media only screen and (min-width: 1024px) {
-  .about-us-container {
-    flex-direction: row;
+.nav-links {
+  display: flex;
+  list-style: none;
+  & li {
+    margin-right: 20px;
+    color: $navLinkBrown;
+    cursor: pointer;
+    font-size: 30px;
+    & a {
+      text-decoration: none;
+      color: $navLinkBrown !important;
+    }
   }
-  .contact-us-container {
+}
+
+a:hover {
+  color: $gold;
+}
+
+html {
+  scroll-padding-top: 108px; /* height of sticky header */
+}
+
+@media only screen and (min-width: 750px) {
+  body {
+    font-size: 25px;
+  }
+  .logo {
+    width: 4rem;
+  }
+  .content-left span {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .btn-dark {
+    width: 170px;
+    height: 60px;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #about-us-container {
     flex-direction: row;
+    padding: 150px;
+  }
+  #contact-us-container {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 100px;
+  }
+
+  #about-us-container img {
+    width: 50%;
+  }
+
+  #contact-us-container img {
+    width: 50%;
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  h4 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  h6 {
+    font-size: 35px;
+  }
+
+  p {
+    font-size: 28px;
+  }
+
+  .about-us-text {
+    margin-right: 140px;
+  }
+
+  .contact-us-text div {
+    margin-top: 35px;
+  }
+
+  h5 {
+    font-size: 30px;
   }
 }
