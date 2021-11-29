@@ -39,5 +39,13 @@
 
   <body>
     <h1>hello</h1>
+
+    <table>
+      <tbody>
+          <% menuArray.forEach( (item)=>{     %>
+              <tr><td><%= item.id %></td><td><a"><%= item.name %></a></td></tr>
+                  <% } ); %>
+      </tbody>
+      </table>
   </body>
 </html>
