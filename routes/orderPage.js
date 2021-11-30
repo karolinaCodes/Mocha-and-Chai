@@ -2,9 +2,19 @@
 //  Create webpage for the customer for Orders
 // ======================================================
 
+require("dotenv").config();
 const { Template } = require("ejs");
 const express = require("express");
 const router = express.Router();
+const client = require('twilio')(process.env.ACCOUNTSID ,process.env.AUTHTOKEN);
+
+const sendSMS = (reply) => {
+  client.messages.create({
+    to: '+16479475007',
+    from: '+12399466261', 
+    body: `Your order will be ready in ${reply} minutes!`
+  });
+};
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
@@ -71,7 +81,11 @@ module.exports = (db) => {
               `
           )
             .then((data) => {
+              const ordertime = 20;
               console.log("order details success", data.rows);
+              console.log('message sending')
+              sendSMS(ordertime)
+              console.log('message sent')
             })
             .catch((err) => {
               res.status(500).json({ error: err.message });
