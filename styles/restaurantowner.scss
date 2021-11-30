@@ -1,0 +1,54 @@
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  border : solid black;
+  padding-bottom: 20px;
+}
+.OrderSummary {
+  padding-top: 50px;
+  padding-left: 50px;
+  }
+
+.header-image{
+  padding-top: 100px;
+  width: 100%;
+}
+
+.CustomerSummary {
+  padding-top: 50px;
+  padding-left: 50px;
+  }
+
+.Accept {
+  padding-left: 50px
+
+}
+
+.Reject {
+  padding-left: 50px
+}
+
+#acceptbutton{
+  background-color:#24463e;
+  height: 50px;
+  width: 150px;
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+#rejectbutton{
+  background-color: maroon;
+  height: 50px;
+  width: 150px;
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+.EstimatedTime{
+  height: 50px;
+  width: 500px;
+  margin: 10px 10px 10px 10px;
+  padding-right: 50px;
+}
