@@ -1,41 +1,43 @@
 // Client facing scripts here
 // Shopping Cart functionality
-// const { Pool } = require("pg");
-// const dbParams = require("lib/db.js");
-// const db = new Pool(dbParams);
-// db.connect();
 
 $(document).ready(() => {
   let total = 0;
   const cart = [];
+  console.log(cart);
 
   $(".add-to-cart").click((e) => {
+    e.preventDefault();
     //collect item details to add to "your" order
-    const products = $.get("/orderPage/products", (products) => {
-      // console.log(products);
+    $.get("/orderPage/products", (products) => {
+      $("#empty-cart-msg").hide();
+    }).then((products) => {
       // get id of btn element clicked
       const id = Number(e.target.id);
-      // console.log("productId", id);
 
       const productChosen = products.find((product) => {
         return product.id === id;
       });
 
-      // console.log("productChosen", productChosen);
-      const quantity = $("input[id=" + id + "]").val();
+      const quantity = $("input[id=quantity" + id + "]").val();
       productChosen.qty = Number(quantity);
+      console.log({ quantity });
+      console.log({ productChosen });
+
+      cart.push(productChosen);
+      console.log(cart);
 
       // TODO:add empty cart msg, and remove it here- your cart is empty. Add items to get started.
-      // if ($("cart-is-empty")) {
-      //   $("your-order").remove("cart-is-empty");
+      // if (cart.length) {
+      //   $("#order-list").empty();
       // }
 
       const $orderItem = $(`<div>
-  <p>${productChosen.title}</p>
-  <p>$${productChosen.price.toFixed(2)}</p>
-  <p>${productChosen.qty}</p>
-  </div>
-  <button>Remove</button>`);
+      <p>${productChosen.title}</p>
+      <p>$${productChosen.price.toFixed(2)}</p>
+      <p>${productChosen.qty}</p>
+      </div>
+      <button>Remove</button>`);
       // add Class?;
 
       $("#order-list").append($orderItem);
@@ -45,10 +47,6 @@ $(document).ready(() => {
       if (total) {
         $(".Total_Summary").text(`Total: $${total.toFixed(2)}`);
       }
-
-      cart.push(productChosen);
-      //add quantity to product obj before add to cart
-      // console.log(cart);
     });
   });
 
@@ -64,7 +62,6 @@ $(document).ready(() => {
       const phone_no = $("[name='phone_no']").val();
 
       //cart
-      // console.log(first_name);
       const data = {
         first_name,
         last_name,

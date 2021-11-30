@@ -31,7 +31,7 @@ module.exports = (db) => {
 
   router.post("/", (req, res) => {
     // console.log(req.body, "HEEELOOOO");
-    // JSON.parse(req.body);
+
     // customers table
     const { first_name } = req.body;
     const { last_name } = req.body;
@@ -60,6 +60,7 @@ module.exports = (db) => {
 
         const { cart } = req.body;
         const order_id = data.rows[0].id;
+
         // ASK IF SHOULD CALC THE QUANTITY FOR A REPEAT ITEM
         cart.forEach((item) => {
           // console.log(item);
