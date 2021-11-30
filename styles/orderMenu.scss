@@ -1,14 +1,31 @@
 #Header-Photo-MenuPage {
-  max-width: 100%;
-  height: 800px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 40px;
 }
 
 body {
   padding-top : 40px ;
 }
 
+
 .quantity {
   padding:5px;
   width:50px;
   border: 1px solid #555;
+}
+
+.order_menu_page_cont{
+  display: flex;
+}
+
+.menu_image_itemsView {
+  display: flex;
+  flex-direction: column;
+}
+
+.each_item_container{
+  width: 60%;
 }

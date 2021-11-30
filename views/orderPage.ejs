@@ -61,17 +61,20 @@
 <!---image for the order page-->
 <header>
     <section>
-      <div >
-         <img id="Header-Photo-MenuPage" src="/images/menu_images/orderMenuPhoto.jpg" />
+      <div id="Header-Photo-MenuPage">
+         <img  src="/images/menu_images/orderBnnr.jpg" />
       </div>
     </section>
 </header>
 
 <!--Section: Content-->
-
+<div class="order_menu_page_cont">
+  <div class = "menu_image_itemsView">
 <% menuArray.forEach( (item)=>{     %>
-  <section>
-    <div class="col-lg-6 col-md-6 mb-4" id=<%= item.id%> >
+
+  <section class="each_item_container">
+
+    <div class="mb-4" id=<%= item.id%> >
                 <div class="card flex-row">
                 <div class="bg-image hover-overlay ripple col-lg-6" data-mdb-ripple-color="light">
                 <img src="<%= item.url %>" class="img-fluid" />
@@ -98,10 +101,10 @@
     </div>
     </section>
       <% } ); %>
-
+  </div>
 
       <div class="row justify-content-around">
-        <div class="col-md-5">
+        <div class="">
             <div class="card border-0">
                 <div class="card-header pb-0">
                     <h2 class="card-title space ">Your Order</h2>
@@ -148,5 +151,12 @@
             </div>
         </div>
 
+  </div>
+
+    <div>
+      <img class="orderPagefooter-img" src="/images/menu_images/orderPageFooter.jpg" />
+    </div>
+    <footer><span>©2021 by Mocha + Chai. All rights reserved.</sp></footer>
+  </div>
   </body>
 </html>
