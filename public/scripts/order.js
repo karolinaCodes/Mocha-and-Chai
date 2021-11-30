@@ -11,17 +11,22 @@ $(document).ready(() => {
   $(".add-to-cart").click((e) => {
     //collect item details to add to "your" order
     const products = $.get("/orderPage/products", (products) => {
-      console.log(products);
+      // console.log(products);
       // get id of btn element clicked
       const id = Number(e.target.id);
-      console.log("productId", id);
+      // console.log("productId", id);
 
       const productChosen = products.find((product) => {
         return product.id === id;
       });
 
-      console.log("productChosen", productChosen);
-      const quantity = $("dropdown").val();
+      // console.log("productChosen", productChosen);
+      const quantity = $("input[id=" + id + "]").val();
+
+      $("input[id][name$='man']");
+
+      // const quantity = $("input", `#${id}`).val();
+      // console.log(quantity);
 
       if ($("cart-is-empty")) {
         $("your-order").remove("cart-is-empty");

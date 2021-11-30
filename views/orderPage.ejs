@@ -90,10 +90,10 @@
                 </p>
                 <p class= "price-text">
                   $<%= item.price %> </p>
-                <button type="button" id=<%= item.id%> class="add-to-cart btn btn-primary"> Add to Cart </button>
+                <button type="button" id="<%= item.id%>" class="add-to-cart btn btn-primary"> Add to Cart </button>
                 <form>
                 <label for="quantity"> Qty: </label>
-                <input min="1" type="number" class="quantity" name="quantity" value="1" />
+                <input min="1" type="number" class="quantity" id="<%= item.id%>" name="quantity" value="1" />
                 <form>
                 </div>
                 </div>
