@@ -19,6 +19,7 @@ module.exports = (db) => {
       });
   });
 
+  // retrieve products data from products table //
   router.get("/products", (req, res) => {
     db.query(`SELECT * FROM products;`)
       .then((data) => {
@@ -29,42 +30,39 @@ module.exports = (db) => {
       });
   });
 
+  // add customer details, order, and order details in DB when user submits order //
   router.post("/", (req, res) => {
-    // console.log(req.body, "HEEELOOOO");
-
-    // customers table
     const { first_name } = req.body;
     const { last_name } = req.body;
     const { email } = req.body;
     const { phone_no } = req.body;
-    // console.log("here");
+
+    // insert into customer data into customers table
     db.query(
       `INSERT INTO customers (first_name, last_name, email, phone_no)
       VALUES ('${first_name}', '${last_name}', '${email}', '${phone_no}')
       RETURNING *;
     `
     ).then((data) => {
-      // console.log("customers - success");
+      console.log("customers table- success");
       const { total } = req.body;
       const order_url = "http://localhost:8080/orderPage";
       const status = "Pending";
       const customer_id = data.rows[0].id;
-      // console.log(total, order_url, status, customer_id);
+
+      // insert into order data into orders table
       db.query(
         `INSERT INTO orders (total, order_url, status, estimated_time, customer_id)
           VALUES (${total}, '${order_url}', '${status}', 0, '${customer_id}')
           RETURNING *;
         `
       ).then((data) => {
-        // console.log("orders - success");
-
+        console.log("orders table- success");
         const { cart } = req.body;
         const order_id = data.rows[0].id;
 
-        // ASK IF SHOULD CALC THE QUANTITY FOR A REPEAT ITEM
+        // insert into order details data into order_details table
         cart.forEach((item) => {
-          // console.log(item);
-          console.log(item.qty, order_id, item.id);
           db.query(
             `INSERT INTO order_details (qty, order_id, product_id)
             VALUES (${Number(item.qty)}, ${order_id}, ${Number(item.id)})
@@ -72,7 +70,8 @@ module.exports = (db) => {
               `
           )
             .then((data) => {
-              console.log("order details success", data.rows);
+              console.log("order details table - success", data.rows);
+              res.send(data.rows);
             })
             .catch((err) => {
               res.status(500).json({ error: err.message });
@@ -80,32 +79,6 @@ module.exports = (db) => {
         });
       });
     });
-
-    // orders table
-
-    //     INSERT INTO order_details (qty, order_id, product_id)
-    // VALUES (2, 1, 1);
-
-    // INSERT INTO order_details (qty, order_id, product_id)
-    // VALUES (1, 1, 2);
-
-    // INSERT INTO order_details (qty, order_id, product_id)
-    // VALUES (1, 1, 5);
-    // db.query(
-    //   `INSERT INTO customers (first_name, last_name, email, phone_no)
-    // VALUES(${first_name}, ${last_name}, ${email}, ${phone_no});
-    // `
-    // )
-    //   .then((data) => {})
-    //   .catch((err) => {
-    //     res.status(500).json({ error: err.message });
-    //   });
-
-    //   customer_id INTEGER REFERENCES customers(id) ON DELETE CASCADE
-    // );
-
-    //order details table
-    // const { cart } = req.body;
   });
 
   return router;

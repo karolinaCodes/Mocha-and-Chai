@@ -5,6 +5,7 @@ $(document).ready(() => {
   let total = 0;
   let cart = [];
 
+  //// Add to cart buttons event handler ////
   $(".add-to-cart").click((e) => {
     e.preventDefault();
     //collect item details to add to "your" order
@@ -57,9 +58,14 @@ $(document).ready(() => {
     });
   });
 
+  //// Remove buttons event handler ////
+  $("#remove-btn").click(() => {
+    // find the item in the cart and remove it, and update the quantity, the price on page and in the data sending to db
+  });
+
+  //// Order button event handler ////
   $(".Order_button").click(() => {
     $("#customer-info").slideDown("slow");
-    // change button to submit so form info will be posted to db
     $(".Order_button").text("Submit");
 
     $(".Order_button").click(() => {
@@ -78,22 +84,27 @@ $(document).ready(() => {
         cart,
       };
 
-      $.post("/orderPage", data);
+      $.post("/orderPage", data, (orderdetails) => {
+        //reset form
+        $("[name='first_name']").val("");
+        $("[name='last_name']").val("");
+        $("[name='email']").val("");
+        $("[name='phone_no']").val("");
+        total = 0;
+        cart = [];
+        //reset the quantity of dropdown to 1
+        // $("input[id=" + id + "]").val("1");
 
-      //reset form
-      $("[name='first_name']").val("");
-      $("[name='last_name']").val("");
-      $("[name='email']").val("");
-      $("[name='phone_no']").val("");
-      total = 0;
-      cart = [];
-      //reset the quantity of dropdown to 1
-      // $("input[id=" + id + "]").val("1");
-
-      $("#customer-info").slideUp("slow");
-      $(".Order_button").hide();
-      $(".Total_Summary").hide();
-      $("#remove-btn").hide();
+        $("#customer-info").slideUp("slow");
+        $(".Order_button").hide();
+        $(".Total_Summary").hide();
+        $("#remove-btn").hide();
+        $("#sub-order-details").html(
+          `<p>Order #: ${orderdetails[0].order_id}</p>
+          <p>Order Placed. </p>
+          <p>SMS with estimated time will be shared once order is accepted.</p>`
+        );
+      });
     });
   });
 });
