@@ -3,8 +3,7 @@
 
 $(document).ready(() => {
   let total = 0;
-  const cart = [];
-  console.log(cart);
+  let cart = [];
 
   $(".add-to-cart").click((e) => {
     e.preventDefault();
@@ -19,34 +18,42 @@ $(document).ready(() => {
         return product.id === id;
       });
 
-      const quantity = $("input[id=quantity" + id + "]").val();
+      const quantity = $("input[id=" + id + "]").val();
       productChosen.qty = Number(quantity);
-      console.log({ quantity });
-      console.log({ productChosen });
 
+      // if item is already in cart, increase the qty in cart by the submitted quantity and update the price
+      if (cart.some((cartItem) => cartItem.id === id)) {
+        for (let cartItem of cart) {
+          if (cartItem.id === id) {
+            cartItem.qty += productChosen.qty;
+            $("#cart-item-quantity").text(cartItem.qty);
+
+            total += productChosen.price * productChosen.qty;
+            $(".Total_Summary").text(`Total: $${total.toFixed(2)}`);
+          }
+        }
+        return;
+      }
+
+      // if item not in cart already, add to cart, append new item to cart, and increase price
       cart.push(productChosen);
-      console.log(cart);
 
-      // TODO:add empty cart msg, and remove it here- your cart is empty. Add items to get started.
-      // if (cart.length) {
-      //   $("#order-list").empty();
-      // }
+      //TODO: remove btn
+      console.log(cart);
 
       const $orderItem = $(`<div>
       <p>${productChosen.title}</p>
       <p>$${productChosen.price.toFixed(2)}</p>
-      <p>${productChosen.qty}</p>
+      <p id="cart-item-quantity">${productChosen.qty}</p>
       </div>
-      <button>Remove</button>`);
+      <button id="remove-btn">Remove</button>`);
       // add Class?;
 
       $("#order-list").append($orderItem);
 
-      total += productChosen.price;
+      total += productChosen.price * productChosen.qty;
 
-      if (total) {
-        $(".Total_Summary").text(`Total: $${total.toFixed(2)}`);
-      }
+      $(".Total_Summary").text(`Total: $${total.toFixed(2)}`);
     });
   });
 
@@ -78,10 +85,15 @@ $(document).ready(() => {
       $("[name='last_name']").val("");
       $("[name='email']").val("");
       $("[name='phone_no']").val("");
+      total = 0;
+      cart = [];
       //reset the quantity of dropdown to 1
       // $("input[id=" + id + "]").val("1");
 
       $("#customer-info").slideUp("slow");
+      $(".Order_button").hide();
+      $(".Total_Summary").hide();
+      $("#remove-btn").hide();
     });
   });
 });
