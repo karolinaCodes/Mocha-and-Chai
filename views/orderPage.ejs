@@ -62,12 +62,14 @@
 <header>
     <section>
       <div id="Header-Photo-MenuPage">
-         <img  src="/images/menu_images/orderBnnr.jpg" />
+         <img  src="/images/menu_images/orderBannerPhoto.jpg" />
       </div>
     </section>
 </header>
 
-<!--Section: Content-->
+<!-- comment out the info at 11:26pm-->
+
+<!-- Section: Content
 <div class="order_menu_page_cont">
   <div class = "menu_image_itemsView">
 <% menuArray.forEach( (item)=>{     %>
@@ -90,11 +92,14 @@
                 </p>
                 <p class= "price-text">
                   $<%= item.price %> </p>
+
+              <div>
                 <button type="button" class="btn btn-primary"> Add to Cart </button>
                 <form>
                 <label for="quantity"> Qty: </label>
                 <input min="1" type="number" class="quantity" name="quantity" value="1" />
                 <form>
+              </div>
                 </div>
                 </div>
                 </div>
@@ -103,7 +108,7 @@
       <% } ); %>
   </div>
 
-      <div class="row justify-content-around">
+      <div class="row justify-content-around" id= "cart-view">
         <div class="">
             <div class="card border-0">
                 <div class="card-header pb-0">
@@ -151,8 +156,82 @@
             </div>
         </div>
 
-  </div>
+  </div> -->
+<!-- comment out till here-->
 
+<div class="parent_container">
+ <% menuArray.forEach( (item)=>{ %>
+    <div  id=<%= item.id%>
+                <span>
+                <img src="<%= item.url %>" class="img-fluid" />
+                </span>
+                <span class="description_items">
+                <h5><%= item.title %></h5>
+                <p >
+                  <%= item.description %>
+                </p>
+                <p
+                  $<%= item.price %> </p>
+                </span>
+              <span>
+              <div>
+                <button type="button"><strong>Add to Cart<strong></button>
+                  <br>
+                  <input min="1" class="cart-quantity-input" type="number" value="1">
+                </input>
+              </div>
+              </span>
+ <% } ); %>
+ <div class="Cart_Container">
+  <div class="">
+      <div class="card border-0">
+          <div class="card-header pb-0">
+              <h2 class="card-title space ">Your Order</h2>
+              <h6>Location</h6>
+        <p>
+          Bisha Hotel Ground Floor 80 Blue Jays Way Toronto, On M5V 2G3
+        </p>
+          <p>Order #</p>
+              <p class="card-text text-muted mt-4 space"></p>
+              <hr class="my-0">
+              <div><form >
+                  <input
+                  type="text"
+                  name="first_name"
+                  placeholder="First name"
+                  />
+
+                  <input
+                  type="text"
+                  name="last_name"
+                  placeholder="Last name"
+                  />
+
+                  <input
+                    type="email"
+                    name="email"
+                    aria-describedby="emailHelp"
+                    placeholder="Email"
+                    />
+
+                    <input
+                    type="text"
+                    name="phone_no"
+                    placeholder="Phone number"
+                    required
+                    />
+                    </form>
+                    </div>
+
+              <p class="Total_Summary"> Total</p>
+              <button class="Order_button"type="button"> Order </button>
+          </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- footer and bottom image-->
     <div>
       <img class="orderPagefooter-img" src="/images/menu_images/orderPageFooter.jpg" />
     </div>
