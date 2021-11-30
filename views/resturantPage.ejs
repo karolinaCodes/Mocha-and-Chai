@@ -54,49 +54,49 @@
   </div>
 
   <div class="main-container">
-  <div class="OrderSummary">
-    <h6>Order # <%= dataArray[0].orders_id %></h6>
-    <span class="text-muted"> Date : 2021-11-28</span>
+      <div class="OrderSummary">
+        <h6>Order # <%= dataArray[0].orders_id %></h6>
+        <span class="text-muted"> Date : 2021-11-28</span>
 
-    <div>
-      <br>
-      <h7 class="bold">Order:</h7>
+        <div>
+          <br>
+          <h7 class="bold">Order:</h7>
 
+      </div>
+        <% dataArray.forEach( (item)=>{     %>
+        <div class="OrderItems">
+            <tr><td><%=item.line_id%></td><td>  </td><td><%=item.product_name%></td></tr>
+        </div>
+        <% } ); %>
+            <br>
+            <h7 class="mb-3"> Order Total: <span class="small text-muted"> <%=dataArray[0].total%> </span></h7>
+        </div>
+
+      <div class="CustomerSummary">
+            <h6><%=dataArray[0].first_name%><%=dataArray[0].last_name%></h6>
+            <h7 class="text-muted"> <%=dataArray[0].phone_no%></h7>
+            <p class="text-muted"> <%=dataArray[0].email%></p>
+      </div>
+
+      <div class="AcceptReject">
+          <div class="Accept">
+            <!-- Accept Button -->
+            <button type="submit" id="acceptbutton" class="btn btn-primary btn-block">Accept</button>
+          </div>
+          <div class="Reject">
+            <!-- Reject Button -->
+            <button type="submit" id="rejectbutton" class="btn btn-primary btn-block">Reject</button>
+          </div>
+      </div>
+
+      <div class="EstimatedTime">
+        <label> Estimated Prep time: </label>
+        <input type="estimatedtime" name="estimatedtime" class="form-control" />
+      </div>
     </div>
-    <% dataArray.forEach( (item)=>{     %>
-    <div class="OrderItems">
-      <tr><td><%=item.line_id%></td><td>  </td><td><%=item.product_name%></td></tr>
+    <div class="page_end">
+      <img class="footer-img" src="/images/latte-three.jpeg" />
+      <footer><span>© 2021 by Mocha + Chai. All rights reserved.</sp></footer>
     </div>
-    <% } ); %>
-    <br>
-    <h7 class="mb-3"> Order Total: <span class="small text-muted"> <%=dataArray[0].total%> </span></h7>
-  </div>
-
-  <div class="CustomerSummary">
-    <h6><%=dataArray[0].first_name%><%=dataArray[0].last_name%></h6>
-    <h7 class="text-muted"> <%=dataArray[0].phone_no%></h7>
-    <p class="text-muted"> <%=dataArray[0].email%></p>
-  </div>
-
-  <div class="AcceptReject">
-     <div class="Accept">
-        <!-- Accept Button -->
-        <button type="submit" id="acceptbutton" class="btn btn-primary btn-block">Accept</button>
-     </div>
-     <div class="Reject">
-        <!-- Reject Button -->
-        <button type="submit" id="rejectbutton" class="btn btn-primary btn-block">Reject</button>
-     </div>
-  </div>
-
-  <div class="EstimatedTime">
-    <label> Estimated Prep time: </label>
-    <input type="estimatedtime" name="estimatedtime" class="form-control" />
-  </div>
-</div>
-<div>
-  <img class="footer-img" src="/images/latte-three.jpeg" />
-<footer><span>© 2021 by Mocha + Chai. All rights reserved.</sp></footer>
-</div>
 </body>
 </html>
