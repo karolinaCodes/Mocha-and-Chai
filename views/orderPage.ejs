@@ -36,6 +36,9 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/routes/orderPage.js"></script>
 
+      <!-- App JS -->
+      <script type="module" src="/scripts/order.js"></script>
+
   </head>
 
   <body >
@@ -71,7 +74,7 @@
 
 <% menuArray.forEach( (item)=>{     %>
   <section>
-    <div class="col-lg-6 col-md-6 mb-4" id=<%= item.id%> >
+    <div class="col-lg-6 col-md-6 mb-4"  >
                 <div class="card flex-row">
                 <div class="bg-image hover-overlay ripple col-lg-6" data-mdb-ripple-color="light">
                 <img src="<%= item.url %>" class="img-fluid" />
@@ -87,7 +90,7 @@
                 </p>
                 <p class= "price-text">
                   $<%= item.price %> </p>
-                <button type="button" class="btn btn-primary"> Add to Cart </button>
+                <button type="button" id=<%= item.id%> class="add-to-cart btn btn-primary"> Add to Cart </button>
                 <form>
                 <label for="quantity"> Qty: </label>
                 <input min="1" type="number" class="quantity" name="quantity" value="1" />

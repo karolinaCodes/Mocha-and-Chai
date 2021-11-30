@@ -1,39 +1,50 @@
+// const { Pool } = require("pg");
+// const dbParams = require("lib/db.js");
+// const db = new Pool(dbParams);
+// db.connect();
+
 $(document).ready(() => {
   const total = 0;
   const cart = [];
-
+  // lib / db.js;
   //if customer hasn't added items- have cart say- your cart is empty. Add items to get started.
-  $("addtocartform").click((e) => {
+  $(".add-to-cart").click((e) => {
     //collect item details to add to "your" order
+    const products = $.get("/orderPage/products", (products) => {
+      console.log(products);
+      // get id of btn element clicked
+      const id = Number(e.target.id);
+      console.log("productId", id);
 
-    // get the id of element and find in array
-    const products = $.get("/orderPage", (products) => products);
-    // get id of btn element clicked (the btn will have the id of the product)
-    const id = $("button").id;
-    const productChosen = products.find((product) => products.id === id);
-    const quantity = $("dropdown").val();
+      const productChosen = products.find((product) => {
+        return product.id === id;
+      });
 
-    if ($("cart-is-empty")) {
-      $("your-order").remove("cart-is-empty");
-    }
+      console.log("productChosen", productChosen);
+      const quantity = $("dropdown").val();
 
-    const $orderItem = $(`<div>
+      if ($("cart-is-empty")) {
+        $("your-order").remove("cart-is-empty");
+      }
+
+      const $orderItem = $(`<div>
   <p>${productChosen.title}</p>
   <p>${productChosen.title}</p>
   <p>${quantity}</p>
   </div>
   <button>Remove</button>`);
-    // add Class?;
+      // add Class?;
 
-    $("your-order").append($orderItem);
+      $("your-order").append($orderItem);
 
-    total += price;
+      total += price;
 
-    if (total) {
-      $(`<p>Total ${total}</p>`);
-    }
+      if (total) {
+        $(`<p>Total ${total}</p>`);
+      }
 
-    cart.push(productChosen);
+      cart.push(productChosen);
+    });
   });
 
   $("orderbutton").click(() => {

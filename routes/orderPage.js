@@ -19,35 +19,45 @@ module.exports = (db) => {
       });
   });
 
-  router.post("/orderPage", (req, res) => {
-    const { first_name } = req.body;
-    const { last_name } = req.body;
-    const { email } = req.body;
-    const { phone_no } = req.body;
-
-    const { customer_id };
-    const { date };
-    const { total };
-    const { order_url };
-    const { status };
-    const { estimated_time };
-
-    //insert the data
-    db.query(
-      `INSERT INTO customers (first_name, last_name, email, phone_no)
-    VALUES(${first_name}, ${last_name}, ${email}, ${phone_no});
-    `
-    )
+  router.get("/products", (req, res) => {
+    db.query(`SELECT * FROM products;`)
       .then((data) => {
-        const menu = data.rows;
-        const templateVars = { menuArray: menu };
-        console.log(templateVars.menuArray);
-        res.render("orderPage", templateVars);
+        res.send(data.rows);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
       });
   });
+
+  // router.post("/orderPage", (req, res) => {
+  //   const { first_name } = req.body;
+  //   const { last_name } = req.body;
+  //   const { email } = req.body;
+  //   const { phone_no } = req.body;
+
+  //   const { customer_id };
+  //   const { date };
+  //   const { total };
+  //   const { order_url };
+  //   const { status };
+  //   const { estimated_time };
+
+  //   //insert the data
+  //   db.query(
+  //     `INSERT INTO customers (first_name, last_name, email, phone_no)
+  //   VALUES(${first_name}, ${last_name}, ${email}, ${phone_no});
+  //   `
+  //   )
+  //     .then((data) => {
+  //       const menu = data.rows;
+  //       const templateVars = { menuArray: menu };
+  //       console.log(templateVars.menuArray);
+  //       res.render("orderPage", templateVars);
+  //     })
+  //     .catch((err) => {
+  //       res.status(500).json({ error: err.message });
+  //     });
+  // });
   return router;
 };
 
