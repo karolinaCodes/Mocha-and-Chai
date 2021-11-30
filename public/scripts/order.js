@@ -21,6 +21,7 @@ $(document).ready(() => {
 
       // console.log("productChosen", productChosen);
       const quantity = $("input[id=" + id + "]").val();
+      productChosen.qty = Number(quantity);
 
       // TODO:add empty cart msg, and remove it here- your cart is empty. Add items to get started.
       // if ($("cart-is-empty")) {
@@ -30,7 +31,7 @@ $(document).ready(() => {
       const $orderItem = $(`<div>
   <p>${productChosen.title}</p>
   <p>$${productChosen.price.toFixed(2)}</p>
-  <p>${quantity}</p>
+  <p>${productChosen.qty}</p>
   </div>
   <button>Remove</button>`);
       // add Class?;
@@ -44,6 +45,8 @@ $(document).ready(() => {
       }
 
       cart.push(productChosen);
+      //add quantity to product obj before add to cart
+      // console.log(cart);
     });
   });
 
@@ -65,11 +68,21 @@ $(document).ready(() => {
         last_name,
         email,
         phone_no,
+        total,
+        cart,
       };
 
       $.post("/orderPage", data);
-      //get order and user data, submit to db
-      // $("customerinfoform").slideUp("slow");
+
+      //reset form
+      $("[name='first_name']").val("");
+      $("[name='last_name']").val("");
+      $("[name='email']").val("");
+      $("[name='phone_no']").val("");
+      //reset the quantity of dropdown to 1
+      // $("input[id=" + id + "]").val("1");
+
+      $("#customer-info").slideUp("slow");
     });
   });
 });
