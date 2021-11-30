@@ -6,8 +6,7 @@
 $(document).ready(() => {
   const total = 0;
   const cart = [];
-  // lib / db.js;
-  //if customer hasn't added items- have cart say- your cart is empty. Add items to get started.
+
   $(".add-to-cart").click((e) => {
     //collect item details to add to "your" order
     const products = $.get("/orderPage/products", (products) => {
@@ -23,24 +22,20 @@ $(document).ready(() => {
       // console.log("productChosen", productChosen);
       const quantity = $("input[id=" + id + "]").val();
 
-      $("input[id][name$='man']");
-
-      // const quantity = $("input", `#${id}`).val();
-      // console.log(quantity);
-
-      if ($("cart-is-empty")) {
-        $("your-order").remove("cart-is-empty");
-      }
+      // TODO:add empty cart msg, and remove it here- your cart is empty. Add items to get started.
+      // if ($("cart-is-empty")) {
+      //   $("your-order").remove("cart-is-empty");
+      // }
 
       const $orderItem = $(`<div>
   <p>${productChosen.title}</p>
-  <p>${productChosen.title}</p>
+  <p>$${productChosen.price.toFixed(2)}</p>
   <p>${quantity}</p>
   </div>
   <button>Remove</button>`);
       // add Class?;
 
-      $("your-order").append($orderItem);
+      $("#order-list").append($orderItem);
 
       total += price;
 
