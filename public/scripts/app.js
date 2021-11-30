@@ -1,13 +1,19 @@
 // Client facing scripts here
 // Shopping Cart functionality
+//export this ftn
+const cartTotal = (cart) => {
+  let total = 0;
+  for (let cartItem of cart) {
+    total += cartItem.price * cartItem.qty;
+  }
+  return total;
+};
 
 $(document).ready(() => {
-  let total = 0;
   let cart = [];
 
   //// Add to cart buttons event handler ////
   $(".add-to-cart").click((e) => {
-    e.preventDefault();
     //collect item details to add to "your" order
     $.get("/orderPage/products", (products) => {
       $("#empty-cart-msg").hide();
@@ -28,9 +34,7 @@ $(document).ready(() => {
           if (cartItem.id === id) {
             cartItem.qty += productChosen.qty;
             $("#cart-item-quantity").text(cartItem.qty);
-
-            total += productChosen.price * productChosen.qty;
-            $(".Total_Summary").text(`Total: $${total.toFixed(2)}`);
+            $(".Total_Summary").text(`Total: $${cartTotal(cart).toFixed(2)}`);
           }
         }
         return;
@@ -39,28 +43,39 @@ $(document).ready(() => {
       // if item not in cart already, add to cart, append new item to cart, and increase price
       cart.push(productChosen);
 
-      //TODO: remove btn
       console.log(cart);
 
-      const $orderItem = $(`<div>
+      const $orderItem = $(`<div data-product-id="${productChosen.id}">
       <p>${productChosen.title}</p>
       <p>$${productChosen.price.toFixed(2)}</p>
       <p id="cart-item-quantity">${productChosen.qty}</p>
       </div>
-      <button id="remove-btn">Remove</button>`);
+      <button id="remove-btn" data-product-id="${
+        productChosen.id
+      }">Remove</button>`);
       // add Class?;
 
       $("#order-list").append($orderItem);
 
-      total += productChosen.price * productChosen.qty;
+      $(".Total_Summary").text(`Total: $${cartTotal(cart).toFixed(2)}`);
 
-      $(".Total_Summary").text(`Total: $${total.toFixed(2)}`);
+      //// Remove buttons event handler ////
+      $("#order-list").click((e) => {
+        // find the item in the cart and remove it, and update the quantity, the price on page and in the data sending to db
+        //the id in format : {productId:10};
+        const selectedItem = $(e.target).data();
+
+        const filtered = cart.filter(
+          (cartItem) => cartItem.id !== selectedItem.productId
+        );
+        cart = filtered;
+
+        $(".Total_Summary").text(`Total: $${cartTotal(cart).toFixed(2)}`);
+
+        $(`div[data-product-id="${selectedItem.productId}"]`).remove();
+        $(`button[data-product-id="${selectedItem.productId}"]`).remove();
+      });
     });
-  });
-
-  //// Remove buttons event handler ////
-  $("#remove-btn").click(() => {
-    // find the item in the cart and remove it, and update the quantity, the price on page and in the data sending to db
   });
 
   //// Order button event handler ////
@@ -73,7 +88,7 @@ $(document).ready(() => {
       const last_name = $("[name='last_name']").val();
       const email = $("[name='email']").val();
       const phone_no = $("[name='phone_no']").val();
-
+      const total = cartTotal(cart);
       //cart
       const data = {
         first_name,
@@ -90,7 +105,7 @@ $(document).ready(() => {
         $("[name='last_name']").val("");
         $("[name='email']").val("");
         $("[name='phone_no']").val("");
-        total = 0;
+        $("input.quantity").val("1");
         cart = [];
         //reset the quantity of dropdown to 1
         // $("input[id=" + id + "]").val("1");
@@ -98,7 +113,7 @@ $(document).ready(() => {
         $("#customer-info").slideUp("slow");
         $(".Order_button").hide();
         $(".Total_Summary").hide();
-        $("#remove-btn").hide();
+        $("button#remove-btn").hide();
         $("#sub-order-details").html(
           `<p>Order #: ${orderdetails[0].order_id}</p>
           <p>Order Placed. </p>
