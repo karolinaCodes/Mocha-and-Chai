@@ -29,66 +29,50 @@ module.exports = (db) => {
       });
   });
 
-  // router.post("/orderPage", (req, res) => {
-  //   const { first_name } = req.body;
-  //   const { last_name } = req.body;
-  //   const { email } = req.body;
-  //   const { phone_no } = req.body;
+  router.post("/", (req, res) => {
+    // console.log(req.body, "HEEELOOOO");
+    // JSON.parse(req.body);
+    // customers table
+    const { first_name } = req.body;
+    const { last_name } = req.body;
+    const { email } = req.body;
+    const { phone_no } = req.body;
+    console.log("here");
+    db.query(
+      `INSERT INTO customers (first_name, last_name, email, phone_no)
+      VALUES ('${first_name}', '${last_name}', '${email}', '${phone_no}')
+      RETURNING *;
+    `
+    )
+      .then((data) => {
+        console.log("customers success", data.rows);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
 
-  //   const { customer_id };
-  //   const { date };
-  //   const { total };
-  //   const { order_url };
-  //   const { status };
-  //   const { estimated_time };
+    // orders table
 
-  //   //insert the data
-  //   db.query(
-  //     `INSERT INTO customers (first_name, last_name, email, phone_no)
-  //   VALUES(${first_name}, ${last_name}, ${email}, ${phone_no});
-  //   `
-  //   )
-  //     .then((data) => {
-  //       const menu = data.rows;
-  //       const templateVars = { menuArray: menu };
-  //       console.log(templateVars.menuArray);
-  //       res.render("orderPage", templateVars);
-  //     })
-  //     .catch((err) => {
-  //       res.status(500).json({ error: err.message });
-  //     });
-  // });
+    // const { total } = req.body;
+    // const order_url = "http://localhost:8080/orderPage";
+    // const status = active;
+
+    // db.query(
+    //   `INSERT INTO customers (first_name, last_name, email, phone_no)
+    // VALUES(${first_name}, ${last_name}, ${email}, ${phone_no});
+    // `
+    // )
+    //   .then((data) => {})
+    //   .catch((err) => {
+    //     res.status(500).json({ error: err.message });
+    //   });
+
+    //   customer_id INTEGER REFERENCES customers(id) ON DELETE CASCADE
+    // );
+
+    //order details table
+    // const { cart } = req.body;
+  });
+
   return router;
 };
-
-// have in html, display non and then slide down
-// const $customerInfoForm = $(
-//   `<div><form action="/orderPage" method="POST">
-//   <input
-//   type="text"
-//   name="first_name"
-//   placeholder="First name"
-//   />
-
-//   <input
-//   type="text"
-//   name="last_name"
-//   placeholder="Last name"
-//   />
-
-//   <input
-//     type="email"
-//     name="email"
-//     aria-describedby="emailHelp"
-//     placeholder="Email"
-//     />
-
-//     <input
-//     type="text"
-//     name="phone_no"
-//     placeholder="Phone number"
-//     required
-//     />
-//     </form>
-//     </div>`
-// );

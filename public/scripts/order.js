@@ -4,7 +4,7 @@
 // db.connect();
 
 $(document).ready(() => {
-  const total = 0;
+  let total = 0;
   const cart = [];
 
   $(".add-to-cart").click((e) => {
@@ -37,31 +37,39 @@ $(document).ready(() => {
 
       $("#order-list").append($orderItem);
 
-      total += price;
+      total += productChosen.price;
 
       if (total) {
-        $(`<p>Total ${total}</p>`);
+        $(".Total_Summary").text(`Total: $${total.toFixed(2)}`);
       }
 
       cart.push(productChosen);
     });
   });
 
-  $("orderbutton").click(() => {
-    $("customerinfoform").slideDown("slow");
+  $(".Order_button").click(() => {
+    $("#customer-info").slideDown("slow");
     // change button to submit so form info will be posted to db
-    $("orderbtn").setAttribute("type", "submit");
-  });
+    $(".Order_button").text("Submit");
 
-  $("orderbtn").submit(() => {
-    //get order and user data, submit to db
-    $("customerinfoform").slideUp("slow");
-    //get the item data or the item 1
+    $(".Order_button").click(() => {
+      const first_name = $("[name='first_name']").val();
+      const last_name = $("[name='last_name']").val();
+      const email = $("[name='email']").val();
+      const phone_no = $("[name='phone_no']").val();
 
-    //get data from form and from the cart
-    $.post("/orderPage", data);
+      //cart
+      // console.log(first_name);
+      const data = {
+        first_name,
+        last_name,
+        email,
+        phone_no,
+      };
+
+      $.post("/orderPage", data);
+      //get order and user data, submit to db
+      // $("customerinfoform").slideUp("slow");
+    });
   });
 });
-
-// add to db
-// order number

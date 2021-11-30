@@ -4,11 +4,15 @@
 }
 
 body {
-  padding-top : 40px ;
+  padding-top: 40px;
 }
 
 .quantity {
-  padding:5px;
-  width:50px;
+  padding: 5px;
+  width: 50px;
   border: 1px solid #555;
+}
+
+#customer-info {
+  display: none;
 }
