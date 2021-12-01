@@ -26,18 +26,6 @@ body {
   margin: 0;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px;
-  padding: 22px 26px 22px 28px;
-  position: fixed;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  background-color: #f7f7f7;
-}
-
 img {
   width: 100%;
 }
@@ -61,16 +49,6 @@ img {
   line-height: 18px;
   align-self: center;
   color: #a57f4c;
-}
-
-// nav svg {
-//   width: 2em;
-//   color: $primaryGreen;
-// }
-
-nav .btn-dark {
-  color: #f7f7f7;
-  background-color: $primaryGreen;
 }
 
 // Video Full Cover Background
@@ -204,30 +182,8 @@ footer {
   min-width: 750px;
 }
 
-.nav-links {
-  list-style: none;
-  margin: 0px 0px 0px 30px;
-  align-self: center;
-  justify-self: center;
-  display: none;
-  & li {
-    margin-right: 45px;
-    color: $navLinkBrown;
-    cursor: pointer;
-    font-size: 30px;
-    & a {
-      text-decoration: none;
-      color: $navLinkBrown;
-    }
-  }
-}
-
 a:hover {
   color: $gold !important;
-  text-decoration: none;
-}
-
-nav a {
   text-decoration: none;
 }
 
@@ -252,9 +208,6 @@ html {
     width: 170px;
     height: 60px;
     font-size: 25px;
-  }
-  .nav-links {
-    display: flex;
   }
 }
 
@@ -314,10 +267,6 @@ html {
   .overlay-title .title span {
     font-size: 70px;
     font-weight: 200;
-  }
-
-  nav {
-    padding: 30px;
   }
 
   .overlay-title .logo {

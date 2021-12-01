@@ -1,0 +1,57 @@
+$primaryGreen: #24463e;
+$primaryBlack: #222222;
+$navWhite: #f7f7f7;
+$backgroundWhite: #ffffff;
+$navLinkBrown: #666058;
+$gold: #ba9867;
+
+.nav-links {
+  list-style: none;
+  margin: 0px 0px 0px 30px;
+  align-self: center;
+  justify-self: center;
+  display: none;
+  & li {
+    margin-right: 45px;
+    color: $navLinkBrown;
+    cursor: pointer;
+    font-size: 30px;
+    & a {
+      text-decoration: none;
+      color: $navLinkBrown;
+    }
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  padding: 22px 26px 22px 28px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: #f7f7f7;
+}
+
+nav .btn-dark {
+  color: #f7f7f7;
+  background-color: $primaryGreen;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 750px) {
+  .nav-links {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    padding: 30px;
+  }
+}
