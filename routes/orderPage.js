@@ -14,8 +14,8 @@ const sendSMS = (first_name,last_name,phone_no, order_url, order_id) => {
 
     to: `${phone_no}`,
     from: '+12267991422',
-    body: `Hello ${first_name} ${last_name} your order has been placed and  order id :
-    ${order_id} please follow the order at url :${order_url} .`
+    body: `Hey ${first_name}, your order with Mocha & Chai has been placed. Order details are
+    Id: ${order_id} url :${order_url}.`
   })
   .then(message => console.log(message))
   .catch((err) => {
@@ -30,8 +30,7 @@ const sendSMStoResturantOwner = (order_id, phone_no) => {
 
     to: `${phone_no}`,
     from: '+12267991422',
-    body: ` New order has been placed order id :
-    ${order_id}. Kindly accept`
+    body: `Mocha & Chai has a new order Id:${order_id}. Start Brewing!`
   })
   .then(message => console.log(message))
   .catch((err) => {
