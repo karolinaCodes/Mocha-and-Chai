@@ -96,16 +96,13 @@ $(document).ready(() => {
       const phone_no = $("[name='phone_no']").val();
       const total = cartTotal(cart);
 
-      if (!first_name || !last_name || !email || !phone_no) {
+      if (!first_name || !last_name || !phone_no) {
         let errorMsg = "Please enter:";
         if (!first_name) {
           errorMsg += "\n - your first name";
         }
         if (!last_name) {
           errorMsg += "\n - your last name";
-        }
-        if (!email) {
-          errorMsg += "\n - your email";
         }
         if (!phone_no) {
           errorMsg += "\n - your phone number";
