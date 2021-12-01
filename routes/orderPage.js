@@ -48,7 +48,7 @@ module.exports = (db) => {
         console.log("customers table- success");
         const { total } = req.body;
         const order_url = "http://localhost:8080/orderPage";
-        const status = "Pending";
+        const status = "Placed";
         const customer_id = data.rows[0].id;
 
         // insert into order data into orders table
@@ -67,9 +67,9 @@ module.exports = (db) => {
             cart.forEach((item) => {
               db.query(
                 `INSERT INTO order_details (qty, order_id, product_id)
-            VALUES (${Number(item.qty)}, ${order_id}, ${Number(item.id)})
-            RETURNING *;
-              `
+                VALUES (${Number(item.qty)}, ${order_id}, ${Number(item.id)})
+                RETURNING *;
+                `
               )
                 .then((data) => {
                   console.log("order details table - success", data.rows);
