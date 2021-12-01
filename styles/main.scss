@@ -224,6 +224,11 @@ footer {
 
 a:hover {
   color: $gold !important;
+  text-decoration: none;
+}
+
+nav a {
+  text-decoration: none;
 }
 
 html {
