@@ -79,49 +79,36 @@
       <div class="products-container">
         <% menuArray.forEach( (item)=>{ %>
         <div class="single-product">
-          <div>
-            <div class="card flex-row">
-              <div
-                class="bg-image hover-overlay ripple col-lg-6"
-                data-mdb-ripple-color="light"
-              >
-                <img src="<%= item.url %>" class="img-fluid" />
-                <a href="#!">
-                  <div
-                    class="mask"
-                    style="background-color: rgba(251, 251, 251, 0.15)"
-                  ></div>
-                </a>
-              </div>
+          <div class="single-product-details">
+            <div class="product-image-container">
+              <img src="<%= item.url %>" class="product-image" />
+            </div>
 
-              <div class="card-body">
-                <div>
-                  <h5 class="card-title"><%= item.title %></h5>
-                  <p class="card-text"><%= item.description %></p>
-                  <p class="price-text">$<%= item.price.toFixed(2) %></p>
-                </div>
-              </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= item.title %></h5>
+              <p class="card-text"><%= item.description %></p>
+              <p class="price-text">$<%= item.price.toFixed(2) %></p>
+            </div>
 
-              <div class="product-form">
-                <form>
-                  <button
-                    type="button"
-                    id="<%= item.id%>"
-                    class="add-to-cart btn btn-dark"
-                  >
-                    Add to Cart
-                  </button>
-                  <label for="quantity"> Qty: </label>
-                  <input
-                    min="1"
-                    type="number"
-                    class="quantity"
-                    id="<%= item.id%>"
-                    name="quantity"
-                    value="1"
-                  />
-                </form>
-              </div>
+            <div class="product-form">
+              <form class="add-to-cart-form">
+                <button
+                  type="button"
+                  id="<%= item.id%>"
+                  class="add-to-cart btn btn-dark"
+                >
+                  Add to Cart
+                </button>
+                <!-- <label for="quantity"> Qty: </label> -->
+                <input
+                  min="1"
+                  type="number"
+                  class="quantity"
+                  id="<%= item.id%>"
+                  name="quantity"
+                  value="1"
+                />
+              </form>
             </div>
           </div>
         </div>
