@@ -24,7 +24,7 @@ const sendSMS = (first_name,last_name,phone_no, order_url, order_id) => {
 };
 
 
-const sendSMStoResturantOwner = (order_id) => {
+const sendSMStoResturantOwner = (order_id, phone_no) => {
   console.log("im in the sendSMS--");
   client.messages.create({
 
@@ -115,7 +115,7 @@ module.exports = (db) => {
               //sendSMS(first_name,last_name,phone_no, order_url)
               console.log('message sent')
               try{
-                sendSMStoResturantOwner(order_id);
+                sendSMStoResturantOwner(order_id, phone_no);
               } catch(error){
                 console.log(error);
               }
