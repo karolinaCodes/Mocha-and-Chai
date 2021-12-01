@@ -8,7 +8,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Resturant Page</title>
+    <title>Mocha and Chai</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,7 +30,7 @@
     <!-- <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" /> -->
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
+    <link rel="stylesheet" href="/styles/restaurantowner.css" type="text/css" />
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/routes/resturantPage.js"></script>
@@ -38,6 +38,69 @@
   </head>
 
   <body>
-    <h1>welcome</h1>
-  </body>
+
+    <nav>
+      <div class="content-left">
+        <img src="/images/coffee-beans.png" class="logo" />
+        <div class="title">
+          <span>Mocha </span>
+          <span>& Chai</span>
+        </div>
+      </div>
+    </nav>
+
+  <div class="header-image">
+     <img src="/images/coffee.png" />
+  </div>
+  <% if (length > 0) { %>
+    <div class="main-container">
+        <div class="OrderSummary">
+              <h6> Order # <span id="order_no"><%= dataArray[0].orders_id %></span></h6>
+              <span class="text-muted"> Date : 2021-11-28</span>
+              <br>
+              <br>
+              <h7 class="bold">Order:</h7>
+              <% dataArray.forEach( (item)=>{     %>
+              <div class="OrderItems">
+                  <tr><td><%=item.qty%></td><td>  </td><td><%=item.product_name%></td></tr>
+              </div>
+              <% } ); %>
+              <br>
+              <h7 class="mb-3"> Order Total: <span class="total">$<%=dataArray[0].total%>.00 </span></h7>
+          </div>
+
+        <div class="CustomerSummary">
+              <h6><%=dataArray[0].first_name%> <%=dataArray[0].last_name%></h6>
+              <h7 class="text-muted"> <%=dataArray[0].phone_no%></h7>
+              <p class="text-muted"> <%=dataArray[0].email%></p>
+        </div>
+        <form class = "Actions" method="POST" action="/resturantPage">
+            <input name="order_no" value = <%=dataArray[0].orders_id %> type="hidden" />
+            <div class="AcceptReject">
+                  <div class="Accept">
+                    <!-- Accept Button -->
+                    <button type="submit" name="acceptButton" class="acceptbutton" value="true">Accept</button>
+                  </div>
+                  <div class="Reject">
+                    <!-- Reject Button -->
+                    <button type="submit" name="rejectButton" class="rejectbutton" value ="true">Reject</button>
+                  </div>
+            </div>
+
+            <div class="EstimatedTime">
+                  <label> Estimated Prep time: </label>
+                  <input type="estimatedtime" name="estimatedtime" class="form-control" />
+            </div>
+        </form>
+    </div>
+    <% } else { %>
+          <br>
+          <h6 class="NoOrders">No orders to Accept at the moment!</h6>
+          <br>
+    <% } %>
+    <div class="page_end">
+      <img class="footer-img" src="/images/latte-three.jpeg" />
+      <footer><span>© 2021 by Mocha + Chai. All rights reserved.</sp></footer>
+    </div>
+</body>
 </html>
