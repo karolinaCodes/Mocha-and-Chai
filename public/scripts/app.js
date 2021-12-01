@@ -45,15 +45,16 @@ $(document).ready(() => {
 
       console.log(cart);
 
-      const $orderItem = $(`<div data-product-id="${productChosen.id}">
+      const $orderItem = $(`
+      <div data-product-id="${productChosen.id}">
       <p>${productChosen.title}</p>
       <p>$${productChosen.price.toFixed(2)}</p>
       <p id="cart-item-quantity">${productChosen.qty}</p>
       </div>
       <button id="remove-btn" data-product-id="${
         productChosen.id
-      }">Remove</button>`);
-      // add Class?;
+      }" type="button" class="btn btn-dark"  data-mdb-ripple-color="dark"
+      >Remove</button><hr class="my-0" />`);
 
       $("#order-list").append($orderItem);
 

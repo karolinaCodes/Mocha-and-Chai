@@ -1,3 +1,5 @@
+$primaryGreen: #24463e;
+
 #Header-Photo-MenuPage {
   max-width: 100%;
   height: 800px;
@@ -15,4 +17,40 @@ body {
 
 #customer-info {
   display: none;
+}
+
+.main-content {
+  display: flex;
+}
+
+.products-container {
+  width: 65%;
+}
+
+.single-product {
+  width: 100%;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Total_Summary-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.total {
+  align-self: center;
+}
+
+.Order_button {
+  background-color: $primaryGreen;
+}
+
+#remove-btn {
+  background-color: maroon;
 }
