@@ -59,7 +59,7 @@
     <div class="main-container">
         <div class="OrderSummary">
               <h6> Order # <span id="order_no"><%= dataArray[0].orders_id %></span></h6>
-              <span class="text-muted"> Date : 2021-11-28</span>
+              <span class="text-muted"> Date: <%= (new Date(dataArray[0].order_date).toLocaleDateString('fr-CA')) %></span>
               <br>
               <br>
               <h7 class="bold">Order:</h7>

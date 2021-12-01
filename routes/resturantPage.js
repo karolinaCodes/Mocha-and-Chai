@@ -19,7 +19,9 @@ module.exports = (db) => {
     ORDER BY orders.id;`)
       .then((data) => {
         const order_details = data.rows;
+        console.log(data.rows);
         const arrayLength = order_details.length;
+        console.log(new Date(order_details[0].order_date).toLocaleDateString('fr-CA'))
         const templateVars = { dataArray: order_details, length : arrayLength };
         res.render("resturantPage", templateVars);
       })
