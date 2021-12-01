@@ -64,7 +64,7 @@ module.exports = (db) => {
       // console.log("customers - success");
       const { total } = req.body;
       const order_url = "http://localhost:8080/orderPage";
-      const status = "Pending";
+      const status = "Placed";
       const customer_id = data.rows[0].id;
       // console.log(total, order_url, status, customer_id);
       db.query(
