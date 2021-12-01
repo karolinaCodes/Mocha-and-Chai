@@ -61,6 +61,7 @@ $(document).ready(() => {
 
       //// Remove buttons event handler ////
       $("#order-list").click((e) => {
+        $("#customer-info").slideUp("slow");
         // find the item in the cart and remove it, and update the quantity, the price on page and in the data sending to db
         //the id in format : {productId:10};
         const selectedItem = $(e.target).data();
@@ -80,16 +81,39 @@ $(document).ready(() => {
 
   //// Order button event handler ////
   $(".Order_button").click(() => {
+    if (!cart.length) {
+      return;
+    }
     $("#customer-info").slideDown("slow");
     $(".Order_button").text("Submit");
 
+    //// Submit button event handler ////
     $(".Order_button").click(() => {
+      $("#error-msg").remove();
       const first_name = $("[name='first_name']").val();
       const last_name = $("[name='last_name']").val();
       const email = $("[name='email']").val();
       const phone_no = $("[name='phone_no']").val();
       const total = cartTotal(cart);
-      //cart
+
+      if (!first_name || !last_name || !email || !phone_no) {
+        let errorMsg = "Please enter:";
+        if (!first_name) {
+          errorMsg += "\n - your first name";
+        }
+        if (!last_name) {
+          errorMsg += "\n - your last name";
+        }
+        if (!email) {
+          errorMsg += "\n - your email";
+        }
+        if (!phone_no) {
+          errorMsg += "\n - your phone number";
+        }
+        $("#customer-info").append(`<p id="error-msg">${errorMsg}</p>`);
+        return;
+      }
+
       const data = {
         first_name,
         last_name,
@@ -107,8 +131,6 @@ $(document).ready(() => {
         $("[name='phone_no']").val("");
         $("input.quantity").val("1");
         cart = [];
-        //reset the quantity of dropdown to 1
-        // $("input[id=" + id + "]").val("1");
 
         $("#customer-info").slideUp("slow");
         $(".Order_button").hide();
