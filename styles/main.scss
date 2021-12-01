@@ -104,7 +104,7 @@ img {
 
 .overlay-title .title span {
   color: #f7f7f7;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 100;
 }
 
@@ -180,21 +180,22 @@ html {
 
 @media only screen and (min-width: 750px) {
   body {
-    font-size: 25px;
+    font-size: 20px;
   }
   .logo {
-    width: 4rem;
-    margin-right: 11px;
+    width: 3rem;
+    margin-right: 8px;
   }
   .content-left span {
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 22px;
+    margin-top: 1px;
   }
 
   .btn-dark {
     width: 170px;
     height: 60px;
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 
@@ -225,17 +226,16 @@ html {
   }
 
   h4 {
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 700;
   }
 
   h6 {
-    font-size: 35px;
+    font-size: 30px;
   }
 
   p {
-    font-size: 28px;
-
+    font-size: 23px;
     line-height: 60px;
   }
 
@@ -248,11 +248,11 @@ html {
   }
 
   h5 {
-    font-size: 40px;
+    font-size: 27px;
   }
 
   .overlay-title .title span {
-    font-size: 70px;
+    font-size: 65px;
     font-weight: 200;
   }
 

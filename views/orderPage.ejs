@@ -98,7 +98,7 @@
                 <div>
                   <h5 class="card-title"><%= item.title %></h5>
                   <p class="card-text"><%= item.description %></p>
-                  <p class="price-text">$<%= item.price %></p>
+                  <p class="price-text">$<%= item.price.toFixed(2) %></p>
                 </div>
               </div>
 
@@ -107,7 +107,7 @@
                   <button
                     type="button"
                     id="<%= item.id%>"
-                    class="add-to-cart btn btn-primary"
+                    class="add-to-cart btn btn-dark"
                   >
                     Add to Cart
                   </button>
