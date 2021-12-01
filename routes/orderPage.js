@@ -43,42 +43,50 @@ module.exports = (db) => {
       VALUES ('${first_name}', '${last_name}', '${email}', '${phone_no}')
       RETURNING *;
     `
-    ).then((data) => {
-      console.log("customers table- success");
-      const { total } = req.body;
-      const order_url = "http://localhost:8080/orderPage";
-      const status = "Pending";
-      const customer_id = data.rows[0].id;
+    )
+      .then((data) => {
+        console.log("customers table- success");
+        const { total } = req.body;
+        const order_url = "http://localhost:8080/orderPage";
+        const status = "Pending";
+        const customer_id = data.rows[0].id;
 
-      // insert into order data into orders table
-      db.query(
-        `INSERT INTO orders (total, order_url, status, estimated_time, customer_id)
+        // insert into order data into orders table
+        db.query(
+          `INSERT INTO orders (total, order_url, status, estimated_time, customer_id)
           VALUES (${total}, '${order_url}', '${status}', 0, '${customer_id}')
           RETURNING *;
         `
-      ).then((data) => {
-        console.log("orders table- success");
-        const { cart } = req.body;
-        const order_id = data.rows[0].id;
+        )
+          .then((data) => {
+            console.log("orders table- success");
+            const { cart } = req.body;
+            const order_id = data.rows[0].id;
 
-        // insert into order details data into order_details table
-        cart.forEach((item) => {
-          db.query(
-            `INSERT INTO order_details (qty, order_id, product_id)
+            // insert into order details data into order_details table
+            cart.forEach((item) => {
+              db.query(
+                `INSERT INTO order_details (qty, order_id, product_id)
             VALUES (${Number(item.qty)}, ${order_id}, ${Number(item.id)})
             RETURNING *;
               `
-          )
-            .then((data) => {
-              console.log("order details table - success", data.rows);
-              res.send(data.rows);
-            })
-            .catch((err) => {
-              res.status(500).json({ error: err.message });
+              )
+                .then((data) => {
+                  console.log("order details table - success", data.rows);
+                  res.send(data.rows);
+                })
+                .catch((err) => {
+                  res.status(500).json({ error: err.message });
+                });
             });
-        });
+          })
+          .catch((err) => {
+            res.status(500).json({ error: err.message });
+          });
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
       });
-    });
   });
 
   return router;
