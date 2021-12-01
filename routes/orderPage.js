@@ -8,11 +8,18 @@ const express = require("express");
 const router = express.Router();
 const client = require('twilio')(process.env.ACCOUNTSID ,process.env.AUTHTOKEN);
 
-const sendSMS = (reply) => {
+const sendSMS = (first_name,last_name,phone_no, order_url, order_id) => {
+  console.log("im in the sendSMS--");
   client.messages.create({
-    to: '+16479475007',
-    from: '+12399466261', 
-    body: `Your order will be ready in ${reply} minutes!`
+
+    to: `${phone_no}`,
+    from: '+12267991422',
+    body: `Hello ${first_name} ${last_name} your order has been placed and  order id :
+    ${order_id} please follow the order at url :${order_url} .`
+  })
+  .then(message => console.log(message))
+  .catch((err) => {
+    console.log(err);
   });
 };
 
@@ -81,10 +88,15 @@ module.exports = (db) => {
               `
           )
             .then((data) => {
-              const ordertime = 20;
+
               console.log("order details success", data.rows);
-              console.log('message sending')
-              sendSMS(ordertime)
+              console.log('sending message')
+              try{
+                sendSMS(first_name,last_name,phone_no, order_url, order_id);
+              } catch(error){
+                console.log(error);
+              }
+              //sendSMS(first_name,last_name,phone_no, order_url)
               console.log('message sent')
             })
             .catch((err) => {

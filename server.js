@@ -74,7 +74,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Mocha & Chai Server listening on port ${PORT}`);
+  console.log(`Mocha & Chai ☕️ Server listening on port ${PORT}`);
 });
 
 //=======================================================

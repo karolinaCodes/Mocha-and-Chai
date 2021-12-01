@@ -62,20 +62,22 @@
     </nav>
 
 <!---image for the order page-->
- 
+
 <header>
     <section>
-      <div >
-         <img id="Header-Photo-MenuPage" src="/images/menu_images/orderMenuPhoto.jpg" />
+      <div>
+         <img id="Header-Photo-MenuPage" src="/images/menu_images/orderBannerPhoto.jpeg" />
       </div>
     </section>
 </header>
 
 <!--Section: Content-->
+<div class="d-flex" >
 
+<section >
 <% menuArray.forEach( (item)=>{     %>
-  <section>
-    <div class="col-lg-6 col-md-6 mb-4"  >
+
+    <div class="mb-4"  >
                 <div class="card flex-row">
                 <div class="bg-image hover-overlay ripple col-lg-6" data-mdb-ripple-color="light">
                 <img src="<%= item.url %>" class="img-fluid" />
@@ -92,24 +94,27 @@
                 <p class= "price-text">
                   $<%= item.price %> </p>
                 <button type="button" id="<%= item.id%>" class="add-to-cart btn btn-primary"> Add to Cart </button>
+                <br>
+
                 <form>
                 <label for="quantity"> Qty: </label>
                 <input min="1" type="number" class="quantity" id="<%= item.id%>" name="quantity" value="1" />
                 <form>
+                  <br>
+                  <p> <p>
                 </div>
                 </div>
                 </div>
     </div>
-    </section>
       <% } ); %>
+</section>
 
+      <section class = "col-lg-6" >
 
-      <div class="row justify-content-around">
-        <div class="col-md-5">
             <div class="card border-0">
                 <div class="card-header pb-0">
-                    <h2 class="card-title space ">Your Order</h2>
-                    <h6>Location</h6>
+                    <h2 class="card-title space "> <strong>Your Order </strong></h2>
+                    <h6> Location</h6>
               <p>
                 Bisha Hotel Ground Floor 80 Blue Jays Way Toronto, On M5V 2G3
               </p>
@@ -148,11 +153,25 @@
                           </div>
 
                     <p class="Total_Summary"> Total: $0</p>
-                    <button class="Order_button"type="button"> Order </button>
+                    <button class="Order_button"type="button"> <strong> Order </strong> </button>
+
+                    <p> </p>
+                    <p> </p>
                 </div>
                 </div>
-            </div>
-        </div>
+            </section>
+
+</div>
+
+
+<!-- footer and bottom image-->
+<div>
+  <img class="orderPagefooter-img" src="/images/menu_images/orderPagefooter.jpeg" />
+</div>
+<footer><span>©2021 by Mocha + Chai. All rights reserved.</sp></footer>
+</div>
+</body>
+</html>
 
   </body>
 </html>
