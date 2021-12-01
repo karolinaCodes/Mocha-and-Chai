@@ -33,11 +33,11 @@
     <link rel="stylesheet" href="/styles/orderMenu.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+
     <script type="text/javascript" src="/routes/orderPage.js"></script>
 
       <!-- App JS -->
-      <script type="module" src="/scripts/order.js"></script>
+      <script type="module" src="/scripts/app.js"></script>
 
   </head>
 
@@ -46,16 +46,25 @@
     <nav>
       <div class="content-left">
         <img src="/images/coffee-beans.png" class="logo" />
+        <a href="/">
         <div class="title">
           <span>Mocha </span>
           <span>& Chai</span>
         </div>
+      </a>
         <ul class="nav-links">
-          <li><a href="#about-us-container">About</a></li>
-          <li><a href="#contact-us-container">Contact us</a></li>
+          <li><a href="/#about-us-container">About</a></li>
+          <li><a href="/#contact-us-container">Contact us</a></li>
           <li><a href=#>Menu</a></li>
         </ul>
       </div>
+<<<<<<< HEAD
+=======
+      <a href="/orderPage">
+      <button type="button" class="btn btn-dark" data-mdb-ripple-color="dark">
+        Order Now
+      </button>
+>>>>>>> feature/orderPage-queries
     </nav>
 
 <!---image for the order page-->
@@ -73,6 +82,7 @@
 
 <section >
 <% menuArray.forEach( (item)=>{     %>
+<<<<<<< HEAD
 
     <div class="mb-4"  >
                 <div class="card flex-row">
@@ -103,9 +113,36 @@
                 </div>
                 </div>
     </div>
+=======
+  <section>
+    <div class="col-lg-6 col-md-6 mb-4"  >
+      <div class="card flex-row">
+        <div class="bg-image hover-overlay ripple col-lg-6" data-mdb-ripple-color="light">
+          <img src="<%= item.url %>" class="img-fluid" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+        </div>
+        <div class="card-body">
+          <div>
+            <h5 class="card-title"><%= item.title %></h5>
+            <p class="card-text"><%= item.description %></p>
+            <p class= "price-text">$<%= item.price %></p>
+            <form>
+              <button type="button" id="<%= item.id%>" class="add-to-cart btn btn-primary"> Add to Cart </button>
+              <label for="quantity"> Qty: </label>
+              <input min="1" type="number" class="quantity" id="<%= item.id%>" name="quantity" value="1" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+>>>>>>> feature/orderPage-queries
       <% } ); %>
 </section>
 
+<<<<<<< HEAD
       <section class = "col-lg-6" >
 
             <div class="card border-0">
@@ -170,5 +207,53 @@
 </body>
 </html>
 
+=======
+<div class="row justify-content-around">
+  <div class="col-md-5">
+    <div class="card border-0">
+      <div class="card-header pb-0">
+        <h2 class="card-title space ">Your Order</h2>
+        <h6>Location</h6>
+        <p>Bisha Hotel Ground Floor 80 Blue Jays Way Toronto, On M5V 2G3</p>
+        <div id="sub-order-details"></div>
+        <p class="card-text text-muted mt-4 space"></p>
+        <hr class="my-0">
+        <div id="order-list"><span id="empty-cart-msg">Your cart is empty. Add items to get started.</span>
+        </div>
+        <div id="customer-info">
+        <form >
+
+        <input
+        type="text"
+        name="first_name"
+        placeholder="First name"/>
+        <input
+        type="text"
+        name="last_name"
+        placeholder="Last name"
+        />
+
+        <input
+        type="email"
+        name="email"
+        aria-describedby="emailHelp"
+        placeholder="Email"
+        />
+
+        <input
+        type="text"
+        name="phone_no"
+        placeholder="Phone number"
+        />
+
+        </form>
+        </div>
+       </div>
+      <p class="Total_Summary"> Total: $0</p>
+      <button class="Order_button"type="button"> Order </button>
+    </div>
+    </div>
+    </div>
+>>>>>>> feature/orderPage-queries
   </body>
 </html>

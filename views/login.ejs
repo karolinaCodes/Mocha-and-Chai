@@ -38,17 +38,18 @@
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/routes/resturantPage.js"></script>
-
   </head>
 
   <body>
     <nav>
       <div class="content-left">
         <img src="/images/coffee-beans.png" class="logo" />
-        <div class="title">
-          <span>Mocha </span>
-          <span>& Chai</span>
-        </div>
+        <a href="/">
+          <div class="title">
+            <span>Mocha </span>
+            <span>& Chai</span>
+          </div>
+        </a>
       </div>
     </nav>
     <div class="login" id="login">
@@ -66,7 +67,13 @@
         </div>
 
         <!-- Submit button -->
-        <button type="submit" id="submitbutton" class="btn btn-primary btn-block">Sign in</button>
+        <button
+          type="submit"
+          id="submitbutton"
+          class="btn btn-primary btn-block"
+        >
+          Sign in
+        </button>
       </form>
     </div>
   </body>
