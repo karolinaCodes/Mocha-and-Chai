@@ -1,0 +1,19 @@
+$primaryGreen: #24463e;
+$primaryBlack: #222222;
+$navWhite: #f7f7f7;
+$backgroundWhite: #ffffff;
+$navLinkBrown: #666058;
+$gold: #ba9867;
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $navWhite;
+  height: 95px;
+  margin-top: 20px;
+}
+
+.footer-img {
+  width: 100%;
+}
