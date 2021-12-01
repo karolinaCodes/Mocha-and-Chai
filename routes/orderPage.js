@@ -8,11 +8,11 @@ const express = require("express");
 const router = express.Router();
 const client = require("twilio")(process.env.ACCOUNTSID, process.env.AUTHTOKEN);
 
-const sendSMS = (first_name, last_name, phone_no, order_url, order_id) => {
-  console.log("im in the sendSMS--");
+const sendSMS = (first_name, order_url, order_id) => {
+  //console.log("im in the sendSMS--");
   client.messages.create({
 
-    to: `+1${phone_no}`,
+    to: '+16479475007',
     from: '+12267991422',
     body: `Hey ${first_name}, your order with Mocha & Chai has been placed. Order details are
     Id: ${order_id} url :${order_url}.`
@@ -23,10 +23,10 @@ const sendSMS = (first_name, last_name, phone_no, order_url, order_id) => {
   });
 };
 
-const sendSMStoResturantOwner = (order_id, phone_no) => {
-  console.log("im in the sendSMS--");
+const sendSMStoResturantOwner = (order_id) => {
+  //console.log("im in the sendSMS--");
   client.messages.create({
-    to: `+1${phone_no}`,
+    to: '16479475007',
     from: '+12267991422',
     body: `Mocha & Chai has a new order Id:${order_id}. Start Brewing!`
   })
@@ -102,35 +102,22 @@ module.exports = (db) => {
                 `
               )
                 .then((data) => {
-                //   console.log("order details table - success", data.rows);
 
-                //   console.log("line 108");
-                //   console.log(first_name, last_name, phone_no, order_url, order_id)
-                //   try{
-                //     sendSMS = (first_name, last_name, phone_no, order_url, order_id)
-                //   } catch(error){
-                //     console.log(error);
-                //   }
-                //   console.log('line 114');
-                //   try{
-                //     sendSMStoResturantOwner = (order_id, phone_no);
-                //   } catch(error){
-                //     console.log(error);
-                //   }
                 console.log("order details success", data.rows);
                 console.log('sending message')
                 try{
-                  sendSMS(first_name,last_name,phone_no, order_url, order_id);
+                  sendSMS(first_name,last_name, order_url, order_id);
                 } catch(error){
                   console.log(error);
                }
               //sendSMS(first_name,last_name,phone_no, order_url)
               console.log('message sent')
-              try{
-                sendSMStoResturantOwner(order_id, phone_no);
-              } catch(error){
+
+                try{
+                sendSMStoResturantOwner(order_id);
+                } catch(error){
                 console.log(error);
-              }
+                }
                   res.send(data.rows);
                 })
                 .catch((err) => {
