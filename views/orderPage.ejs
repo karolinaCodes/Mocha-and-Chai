@@ -68,10 +68,7 @@
     <header>
       <section>
         <div>
-          <img
-            id="Header-Photo-MenuPage"
-            src="/images/menu_images/orderBannerPhoto.jpeg"
-          />
+          <img id="Header-Photo-MenuPage" src="/images/coffee-in-jungle.jpeg" />
         </div>
       </section>
     </header>
@@ -131,62 +128,52 @@
         <% } ); %>
       </div>
 
-          <div class="card border-0">
-            <div class="card-header pb-0">
-              <h2 class="card-title space">Your Order</h2>
-              <p>
-                Pick up at:
-                Bisha Hotel <br />
-                Ground Floor <br />
-                80 Blue Jays Way <br />
-                Toronto, On M5V 2G3
-              </p>
-              <div id="sub-order-details"></div>
-              <p class="card-text text-muted mt-4 space"></p>
-              <hr class="my-0" />
-              <div id="order-list">
-                <span id="empty-cart-msg"
-                  >Your cart is empty. Add items to get started.</span
-                >
-              </div>
-              <div id="customer-info">
-                <form>
-                  <input
-                    type="text"
-                    name="first_name"
-                    placeholder="First name"
-                  />
-                  <input type="text" name="last_name" placeholder="Last name" />
-
-                  <input
-                    type="email"
-                    name="email"
-                    aria-describedby="emailHelp"
-                    placeholder="Email"
-                  />
-
-                  <input
-                    type="text"
-                    name="phone_no"
-                    placeholder="Phone number"
-                  />
-                </form>
-              </div>
-            </div>
-            <div class="Total_Summary-container">
-            <p class="Total_Summary">Total: $0</p>
-            <button
-              type="button"
-              class="Order_button btn btn-dark"
-              data-mdb-ripple-color="dark"
-              type="button"
+      <div class="card border-0">
+        <div class="card-header pb-0">
+          <h2 class="card-title space">Your Order</h2>
+          <p>
+            Pick up at: Bisha Hotel <br />
+            Ground Floor <br />
+            80 Blue Jays Way <br />
+            Toronto, On M5V 2G3
+          </p>
+          <div id="sub-order-details"></div>
+          <p class="card-text text-muted mt-4 space"></p>
+          <hr class="my-0" />
+          <div id="order-list">
+            <span id="empty-cart-msg"
+              >Your cart is empty. Add items to get started.</span
             >
-              Order
-            </button>
+          </div>
+          <div id="customer-info">
+            <form>
+              <input type="text" name="first_name" placeholder="First name" />
+              <input type="text" name="last_name" placeholder="Last name" />
+
+              <input
+                type="email"
+                name="email"
+                aria-describedby="emailHelp"
+                placeholder="Email"
+              />
+
+              <input type="text" name="phone_no" placeholder="Phone number" />
+            </form>
           </div>
         </div>
-
-          </div>
-          <footer><span>© 2021 by Mocha + Chai. All rights reserved.</span></footer>
+        <div class="Total_Summary-container">
+          <p class="Total_Summary">Total: $0</p>
+          <button
+            type="button"
+            class="Order_button btn btn-dark"
+            data-mdb-ripple-color="dark"
+            type="button"
+          >
+            Order
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer><span>© 2021 by Mocha + Chai. All rights reserved.</span></footer>
   </body>
 </html>
