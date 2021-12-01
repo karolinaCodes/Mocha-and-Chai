@@ -17,7 +17,6 @@ $(document).ready(() => {
     //collect item details to add to "your" order
     $.get("/orderPage/products", (products) => {
       $("#empty-cart-msg").hide();
-      console.log(products);
     }).then((products) => {
       // get id of btn element clicked
       const id = Number(e.target.id);
@@ -44,7 +43,7 @@ $(document).ready(() => {
       // if item not in cart already, add to cart, append new item to cart, and increase price
       cart.push(productChosen);
 
-      console.log(cart);
+      // console.log(cart);
 
       const $orderItem = $(`
       <div data-product-id="${productChosen.id}">
@@ -143,13 +142,14 @@ $(document).ready(() => {
         // check the db for estimated prep time from restaurant
 
         const intervalTimer = setInterval(() => {
-          $.get(`/prepTime/${orderdetails.order_id}`, (estimated_time) => {
-            console.log("estimated_time", estimated_time.estimated_time);
-            if (estimated_time.estimated_time) {
+          $.get(`/prepTime/${orderdetails.order_id}`, (estimatedTime) => {
+            const { estimated_time } = estimatedTime;
+            // console.log("estimated_time", estimated_time.estimated_time);
+            if (estimated_time) {
               clearInterval(intervalTimer);
               $("#order-status").text("Order Accepted!");
               $("#order-time-estimate").text(
-                `Your order will be ready in ${estimated_time.estimated_time} minutes.`
+                `Your order will be ready in ${estimated_time} minutes.`
               );
             }
           });
