@@ -12,10 +12,26 @@ const sendSMS = (first_name,last_name,phone_no, order_url, order_id) => {
   console.log("im in the sendSMS--");
   client.messages.create({
 
-    to: `${phone_no}`, 
+    to: `${phone_no}`,
     from: '+12267991422',
     body: `Hello ${first_name} ${last_name} your order has been placed and  order id :
     ${order_id} please follow the order at url :${order_url} .`
+  })
+  .then(message => console.log(message))
+  .catch((err) => {
+    console.log(err);
+  });
+};
+
+
+const sendSMStoResturantOwner = (order_id) => {
+  console.log("im in the sendSMS--");
+  client.messages.create({
+
+    to: `${phone_no}`,
+    from: '+12267991422',
+    body: ` New order has been placed order id :
+    ${order_id}. Kindly accept`
   })
   .then(message => console.log(message))
   .catch((err) => {
@@ -98,6 +114,12 @@ module.exports = (db) => {
               }
               //sendSMS(first_name,last_name,phone_no, order_url)
               console.log('message sent')
+              try{
+                sendSMStoResturantOwner(order_id);
+              } catch(error){
+                console.log(error);
+              }
+
             })
             .catch((err) => {
               res.status(500).json({ error: err.message });
