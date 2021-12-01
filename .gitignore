@@ -5,3 +5,4 @@ public/styles
 *.sqlite3
 *.DS_Store
 .DS_Store
+public/images/.DS_Store
