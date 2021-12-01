@@ -17,6 +17,7 @@ $(document).ready(() => {
     //collect item details to add to "your" order
     $.get("/orderPage/products", (products) => {
       $("#empty-cart-msg").hide();
+      console.log(products);
     }).then((products) => {
       // get id of btn element clicked
       const id = Number(e.target.id);
@@ -135,10 +136,24 @@ $(document).ready(() => {
         $(".Total_Summary").hide();
         $("button#remove-btn").hide();
         $("#sub-order-details").html(
-          `<p>Order #: ${orderdetails[0].order_id}</p>
-          <p>Order Placed. </p>
-          <p>SMS with estimated time will be shared once order is accepted.</p>`
+          `<p>Order #: ${orderdetails.order_id}</p>
+          <p id="order-status">Order Placed. </p>
+          <p id="order-time-estimate">SMS with estimated time will be shared once order is accepted.</p>`
         );
+        // check the db for estimated prep time from restaurant
+
+        const intervalTimer = setInterval(() => {
+          $.get(`/prepTime/${orderdetails.order_id}`, (estimated_time) => {
+            console.log("estimated_time", estimated_time.estimated_time);
+            if (estimated_time.estimated_time) {
+              clearInterval(intervalTimer);
+              $("#order-status").text("Order Accepted!");
+              $("#order-time-estimate").text(
+                `Your order will be ready in ${estimated_time.estimated_time} minutes.`
+              );
+            }
+          });
+        }, 12000);
       });
     });
   });

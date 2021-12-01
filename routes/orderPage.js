@@ -104,7 +104,7 @@ module.exports = (db) => {
               )
                 .then((data) => {
                   console.log("order details table - success", data.rows);
-                  res.send(data.rows);
+                  res.send(data.rows[0]);
                 })
                 .catch((err) => {
                   res.status(500).json({ error: err.message });
