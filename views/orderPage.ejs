@@ -68,7 +68,7 @@
         <div>
           <img
             id="Header-Photo-MenuPage"
-            src="/images/menu_images/orderBannerPhoto.jpeg"
+            src="/images/menu_images/cafebanner.jpg"
           />
         </div>
       </section>
@@ -99,7 +99,7 @@
                 <div>
                   <h5 class="card-title"><%= item.title %></h5>
                   <p class="card-text"><%= item.description %></p>
-                  <p class="price-text">$<%= item.price %></p>
+                  <p class="price-text" id="priceItemText">$<%= item.price %></p>
                 </div>
               </div>
 
@@ -108,10 +108,12 @@
                   <button
                     type="button"
                     id="<%= item.id%>"
-                    class="add-to-cart btn btn-primary"
+                    class="add-to-cart btn btn-dark"
                   >
                     Add to Cart
                   </button>
+                  <p> </p>
+                  <br>
                   <label for="quantity"> Qty: </label>
                   <input
                     min="1"
@@ -121,12 +123,16 @@
                     name="quantity"
                     value="1"
                   />
+                  <p> </p>
                 </form>
               </div>
             </div>
           </div>
+          <p> </p>
+          <p> </p>
         </div>
         <% } ); %>
+
       </div>
 
           <div class="card border-0">
@@ -154,20 +160,26 @@
                     name="first_name"
                     placeholder="First name"
                   />
-                  <input type="text" name="last_name" placeholder="Last name" />
-
+                  <br>
+                  <input
+                  type="text"
+                  name="last_name"
+                  placeholder="Last name"
+                  />
+                  <br>
                   <input
                     type="email"
                     name="email"
                     aria-describedby="emailHelp"
                     placeholder="Email"
                   />
-
+                  <br>
                   <input
                     type="text"
                     name="phone_no"
                     placeholder="Phone number"
                   />
+                  <br>
                 </form>
               </div>
             </div>
@@ -183,5 +195,18 @@
             </button>
           </div>
         </div>
+
+    </div>
+
+    <!-- footer and bottom image-->
+    <div>
+      <!-- <img class="orderPagefooter-img" src="/images/menu_images/orderPagefooter.jpeg" /> -->
+      <video loop muted autoplay poster="" class="fullscreen-video">
+        <source src="/videos/footerVideo.mp4" type="video/mp4" />
+      </video>
+  </div>
+  <footer>
+      <span>©2021 by Mocha + Chai. All rights reserved.</span>
+  </footer>
   </body>
 </html>

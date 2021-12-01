@@ -102,16 +102,13 @@ module.exports = (db) => {
                 `
               )
                 .then((data) => {
-
-                console.log("order details success", data.rows);
-                console.log('sending message')
                 try{
                   sendSMS(first_name,last_name, order_url, order_id);
                 } catch(error){
                   console.log(error);
                }
               //sendSMS(first_name,last_name,phone_no, order_url)
-              console.log('message sent')
+            
 
                 try{
                 sendSMStoResturantOwner(order_id);
