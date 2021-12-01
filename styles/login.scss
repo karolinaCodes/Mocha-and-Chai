@@ -2,8 +2,20 @@
   display: flex;
   justify-content: center;
   padding-top: 200px;
- }
+}
 
- #submitbutton{
- background-color:#24463e
- }
+#submitbutton {
+  background-color: #24463e;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $navWhite;
+  height: 95px;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
