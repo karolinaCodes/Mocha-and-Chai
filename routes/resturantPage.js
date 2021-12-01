@@ -4,7 +4,7 @@
 
 const express = require("express");
 const router = express.Router();
-//const client = require('twilio')(process.env.ACCOUNTSID ,process.env.AUTHTOKEN);
+const client = require('twilio')(process.env.ACCOUNTSID ,process.env.AUTHTOKEN);
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
@@ -40,18 +40,44 @@ module.exports = (db) => {
                         estimated_time = ${estimationtime}
                     WHERE id = ${orderid};`)
         .then((data) => {
-          res.redirect("resturantPage");
-        })
+         res.redirect("resturantPage");
+          const sendSMS = (estimated_time) => {
+            client.messages.create({
+              to: '+16479475007',
+              from: '+12267991422',
+              body: `Your order with Mocha & Chai has been accepted and will be ready in ${estimated_time} mins!`
+            })
+            .then(message => console.log(message))
+            .catch((err) => {
+              console.log(err);
+            });
+          };
+          sendSMS(estimationtime);
+          })
         .catch((err) => {
           res.status(500).json({ error: err.message });
         });
+
     } else if (reject) {
         db.query(`UPDATE orders
-        SET status = 'Rejected'
-        WHERE id = ${orderid};`)
+          SET status = 'Rejected'
+          WHERE id = ${orderid};`)
         .then((data) => {
-        res.redirect("resturantPage");
-        })
+          res.redirect("resturantPage");
+          const sendSMS = () => {
+          client.messages.create({
+            to: '+16479475007',
+            from: '+12267991422',
+            body: `Sorry your order with Mocha & Chai has been rejected as the items are not available!`
+          })
+          .then(message => console.log(message))
+          .catch((err) => {
+            console.log(err);
+          });
+        };
+        sendSMS();
+       })
+
         .catch((err) => {
         res.status(500).json({ error: err.message });
         });

@@ -21,13 +21,23 @@
   padding-left: 50px;
   }
 
+.Actions {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
 .Accept {
-  padding-left: 50px
+  padding-left: 100px;
+  padding-right:100px;
+  font-family: Arial, Helvetica, sans-serif;
 
 }
 
 .Reject {
-  padding-left: 50px
+  padding-left: 100px;
+  padding-right:100px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .NoOrders {
