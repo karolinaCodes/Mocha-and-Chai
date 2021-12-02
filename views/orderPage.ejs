@@ -116,22 +116,20 @@
       </div>
 
       <div class="order-summary-container">
-        <h2 class="card-title">Your Order</h2>
-
-        <!-- <span>Pick up at:</span>
-        <p class="address">
-          Bisha Hotel - Ground Floor <br />
-          80 Blue Jays Way <br />
-        </p> -->
-        <div id="sub-order-details"></div>
+        <h2 class="your-order">Your Order</h2>
         <hr class="my-0" />
+        <div id="sub-order-details"></div>
+
         <div id="order-list">
           <p id="empty-cart-msg">
             Your cart is empty. <br />
             Add items to get started.
           </p>
         </div>
+
         <div id="customer-info">
+          <hr class="my-0" />
+          <p class="info-msg">Please enter your information:</p>
           <form class="customer-info-form">
             <input type="text" name="first_name" placeholder="First name" />
             <input type="text" name="last_name" placeholder="Last name" />
@@ -146,6 +144,7 @@
             <input type="text" name="phone_no" placeholder="Phone number" />
           </form>
         </div>
+        <hr class="my-0" />
         <div class="Total_Summary-container">
           <p class="Total_Summary">Total: $0</p>
           <button

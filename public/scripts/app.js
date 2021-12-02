@@ -46,10 +46,12 @@ $(document).ready(() => {
       // console.log(cart);
 
       const $orderItem = $(`
-      <div data-product-id="${productChosen.id}">
-      <p>${productChosen.title}</p>
-      <p>$${productChosen.price.toFixed(2)}</p>
+      <div class="cart-item-details" data-product-id="${productChosen.id}">
+      <div class="quantity-title">
       <p id="cart-item-quantity">${productChosen.qty}</p>
+      <p class="title">${productChosen.title}</p>
+      </div>
+      <p class="price">$${productChosen.price.toFixed(2)}</p>
       </div>
       <button id="remove-btn" data-product-id="${
         productChosen.id
@@ -134,20 +136,25 @@ $(document).ready(() => {
         $(".Order_button").hide();
         $(".Total_Summary").hide();
         $("button#remove-btn").hide();
+        $(".your-order").text("Order Placed");
         $("#sub-order-details").html(
           `<p>Order #: ${orderdetails.order_id}</p>
-          <p id="order-status">Order Placed. </p>
-          <p id="order-time-estimate">SMS with estimated time will be shared once order is accepted.</p>`
+          <p id="order-time-estimate">SMS with estimated time will be shared once order is accepted.</p>
+          <span>Pick up at:</span>
+          <p class="address">
+            Bisha Hotel - Ground Floor <br />
+            80 Blue Jays Way <br />
+          </p>`
         );
         // check the db for estimated prep time from restaurant
-
+        // <p id="order-status">Order Placed. </p>
         const intervalTimer = setInterval(() => {
           $.get(`/prepTime/${orderdetails.order_id}`, (estimatedTime) => {
             const { estimated_time } = estimatedTime;
             // console.log("estimated_time", estimated_time.estimated_time);
             if (estimated_time) {
               clearInterval(intervalTimer);
-              $("#order-status").text("Order Accepted!");
+              $(".your-order").text("Order Accepted!");
               $("#order-time-estimate").text(
                 `Your order will be ready in ${estimated_time} minutes.`
               );
