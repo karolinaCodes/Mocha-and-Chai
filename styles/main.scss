@@ -115,8 +115,9 @@ img {
 }
 
 .about-us-text {
-  margin: 30px;
+  margin: 10px;
 }
+
 .about-us-text img {
   // width: 100%;
   margin-top: 11px;
@@ -151,7 +152,7 @@ h5 {
 }
 
 .contact-us-text {
-  margin: 40px 30px;
+  margin: 20px 60px;
 }
 
 .contact-us-text img {
@@ -167,7 +168,8 @@ h5 {
 
 .map {
   padding: 0px 30px 40px 30px;
-  min-width: 750px;
+  min-width: 570px;
+  max-height: 540px;
 }
 
 a:hover {
@@ -214,12 +216,12 @@ html {
   #about-us-container {
     flex-direction: row;
     justify-content: space-between;
-    padding: 150px 150px 150px 130px;
+    padding: 100px 90px 100px 90px;
   }
   #contact-us-container {
     flex-direction: row;
     justify-content: space-between;
-    margin: 100px;
+    margin: 70px;
   }
 
   #about-us-container img {
@@ -237,29 +239,29 @@ html {
   }
 
   h4 {
-    font-size: 45px;
+    font-size: 30px;
     font-weight: 700;
   }
 
   h6 {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   p {
-    font-size: 23px;
-    line-height: 60px;
+    font-size: 15px;
+    line-height: 40px;
   }
 
   .about-us-text {
-    margin-right: 140px;
+    margin-right: 100px;
   }
 
   .contact-us-text div {
-    margin-top: 45px;
+    margin-top: 30px;
   }
 
   h5 {
-    font-size: 27px;
+    font-size: 20px;
   }
 
   .overlay-title .title span {

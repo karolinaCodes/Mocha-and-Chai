@@ -47,16 +47,25 @@ $(document).ready(() => {
 
       const $orderItem = $(`
       <div class="cart-item-details" data-product-id="${productChosen.id}">
+       <div>
       <div class="quantity-title">
       <p id="cart-item-quantity">${productChosen.qty}</p>
       <p class="title">${productChosen.title}</p>
       </div>
       <p class="price">$${productChosen.price.toFixed(2)}</p>
+     </div>
+     <i class="far fa-times-circle" id="remove-btn" data-product-id="${
+       productChosen.id
+     }"></i>
+
       </div>
-      <button id="remove-btn" data-product-id="${
-        productChosen.id
-      }" type="button" class="btn btn-dark"  data-mdb-ripple-color="dark"
-      >Remove</button><hr class="my-0" />`);
+      <hr class="my-0" />
+      `);
+
+      // <button id="remove-btn" data-product-id="${
+      //   productChosen.id
+      // }" type="button" class="btn btn-dark"  data-mdb-ripple-color="dark"
+      // >Remove</button>
 
       $("#order-list").append($orderItem);
 
@@ -102,13 +111,13 @@ $(document).ready(() => {
       if (!first_name || !last_name || !phone_no) {
         let errorMsg = "Please enter:";
         if (!first_name) {
-          errorMsg += "\n - your first name";
+          errorMsg += " First name |";
         }
         if (!last_name) {
-          errorMsg += "\n - your last name";
+          errorMsg += " Last name |";
         }
         if (!phone_no) {
-          errorMsg += "\n - your phone number";
+          errorMsg += " Phone number |";
         }
         $("#customer-info").append(`<p id="error-msg">${errorMsg}</p>`);
         return;
@@ -160,7 +169,7 @@ $(document).ready(() => {
               );
             }
           });
-        }, 12000);
+        }, 15000);
       });
     });
   });

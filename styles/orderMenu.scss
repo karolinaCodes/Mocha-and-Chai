@@ -60,12 +60,16 @@ body {
 }
 
 #remove-btn {
-  background-color: maroon;
-  align-self: start;
-  width: 100px;
-  font-size: 16px;
-  height: 40px;
-  border: none;
+  // background-color: maroon;
+  // align-self: start;
+  // width: 100px;
+  // font-size: 14px;
+  // height: 40px;
+  // border: none;
+  color: maroon;
+  align-self: center;
+  position: absolute;
+  right: 40px;
 }
 
 .add-to-cart {
@@ -216,6 +220,10 @@ input::placeholder {
 .cart-item-details {
   width: 100%;
   padding: 0px 10px 10px 10px;
+  display: flex;
+  align-self: center;
+
+  // text-align: left;
 }
 
 #cart-item-quantity {
@@ -239,4 +247,8 @@ input::placeholder {
 
 #sub-order-details {
   padding: 10px;
+}
+
+#error-msg {
+  font-size: 15px;
 }
