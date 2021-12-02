@@ -13,3 +13,10 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

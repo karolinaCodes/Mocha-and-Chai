@@ -7,7 +7,7 @@ $primaryBlack: #222222;
 $navWhite: #f7f7f7;
 $backgroundWhite: #ffffff;
 $navLinkBrown: #666058;
-$gold: #ba9867;
+$primaryGold: #ba9867;
 
 html {
   box-sizing: border-box;
@@ -170,7 +170,7 @@ h5 {
 }
 
 a:hover {
-  color: $gold !important;
+  color: $primaryGold !important;
   text-decoration: none;
 }
 

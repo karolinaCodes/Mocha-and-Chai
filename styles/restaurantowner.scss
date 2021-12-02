@@ -3,23 +3,23 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  border : solid black;
+  border: solid black;
   padding-bottom: 20px;
 }
 .OrderSummary {
   padding-top: 50px;
   padding-left: 50px;
-  }
+}
 
-.header-image{
-  padding-top: 100px;
+.header-image {
+  padding-top: 86px;
   width: 100%;
 }
 
 .CustomerSummary {
   padding-top: 50px;
   padding-left: 50px;
-  }
+}
 
 .Actions {
   display: flex;
@@ -29,14 +29,13 @@
 
 .Accept {
   padding-left: 100px;
-  padding-right:100px;
+  padding-right: 100px;
   font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .Reject {
   padding-left: 100px;
-  padding-right:100px;
+  padding-right: 100px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -46,8 +45,8 @@
   color: #24463e;
 }
 
-.acceptbutton{
-  background-color:#24463e;
+.acceptbutton {
+  background-color: #24463e;
   color: white;
   height: 50px;
   width: 150px;
@@ -55,7 +54,7 @@
   padding: 10px;
 }
 
-.rejectbutton{
+.rejectbutton {
   background-color: maroon;
   color: white;
   height: 50px;
@@ -64,9 +63,13 @@
   padding: 10px;
 }
 
-.EstimatedTime{
+.EstimatedTime {
   height: 50px;
   width: 500px;
   margin: 10px 10px 10px 10px;
   padding-right: 50px;
+}
+
+footer {
+  margin-top: 0;
 }
