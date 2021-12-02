@@ -9,6 +9,7 @@
 .OrderSummary {
   padding-top: 50px;
   padding-left: 50px;
+  font-size: 15px;
 }
 
 .header-image {
@@ -16,16 +17,17 @@
   width: 100%;
 }
 
-
 .CustomerSummary {
-  padding-top: 50px;
-  padding-left: 50px;
+  padding-top: 60px;
+  padding-left: 90px;
+  font-size: 15px;
 }
 
 .Actions {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
+  // margin-left: 100px;
 }
 
 .Accept {
@@ -49,19 +51,23 @@
 .acceptbutton {
   background-color: #24463e;
   color: white;
-  height: 50px;
-  width: 150px;
+  height: 42px;
+  width: 110px;
   margin: 10px 10px 10px 10px;
   padding: 10px;
+  font-size: 15px;
+  border: none;
 }
 
 .rejectbutton {
   background-color: maroon;
   color: white;
-  height: 50px;
-  width: 150px;
+  height: 42px;
+  width: 110px;
   margin: 10px 10px 10px 10px;
   padding: 10px;
+  font-size: 15px;
+  border: none;
 }
 
 .EstimatedTime {
@@ -73,4 +79,25 @@
 
 footer {
   margin-top: 0;
+}
+
+h6 {
+  font-size: 22px;
+}
+
+span.text-muted {
+  font-size: 15px;
+}
+
+h7.text-muted,
+p.text-muted {
+  font-size: 18px;
+}
+
+label {
+  font-size: 15px;
+}
+
+.form-control {
+  width: 80%;
 }
