@@ -50,6 +50,11 @@
           </div>
         </a>
       </div>
+      <a href="/login">
+        <button type="button" class="btn btn-dark" data-mdb-ripple-color="dark">
+          Logout
+        </button>
+      </a>
     </nav>
 
     <div class="header-image">
@@ -120,15 +125,37 @@
           </div>
         </div>
 
-        <div class="EstimatedTime">
-          <label> Estimated Prep time: </label>
-          <input
-            type="estimatedtime"
-            name="estimatedtime"
-            class="form-control"
-          />
-        </div>
-      </form>
+        <form name = "Actions" class = "Actions" method="POST" action="/resturantPage">
+            <input name="order_no" value = <%=dataArray[0].orders_id %> type="hidden" />
+            <div class="AcceptReject">
+                  <div class="Accept">
+                    <!-- Accept Button -->
+                    <button type="submit" name="acceptButton" class="acceptbutton" value="true">Accept </button>
+
+                  </div>
+                  <div class="Reject">
+                    <!-- Reject Button -->
+                    <button type="submit" class="rejectbutton" value ="true">Reject</button>
+                    <input name="rejectButton" type="hidden" />
+                  </div>
+            </div>
+            <div class="EstimatedTime">
+                  <label> Estimated Prep time: </label>
+                  <input type="estimatedtime" name="estimatedtime" class="form-control" required />
+            </div>
+        </form>
+        <script>
+              let rejectButton = document.querySelector('.rejectbutton')
+              rejectButton.addEventListener('click', e => {
+                e.preventDefault();
+              let estimatedtime = document.querySelector('input[name="estimatedtime"]');
+              estimatedtime.removeAttribute("required");
+              let form = document.querySelector('.Actions');
+              let rejectinput = document.querySelector('input[name="rejectButton"]');
+              rejectinput.setAttribute("value","true");
+              form.submit();
+              })
+        </script>
     </div>
     <% } else { %>
     <br />

@@ -58,7 +58,6 @@ module.exports = (db) => {
         .catch((err) => {
           res.status(500).json({ error: err.message });
         });
-
     } else if (reject) {
         db.query(`UPDATE orders
           SET status = 'Rejected'

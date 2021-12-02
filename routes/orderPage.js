@@ -104,6 +104,17 @@ module.exports = (db) => {
               )
                 .then((data) => {
                   console.log("order details table - success", data.rows);
+                  try{
+                    sendSMS(first_name,last_name, order_url, order_id);
+                  } catch(error){
+                    console.log(error);
+                  }
+                  //sendSMS(first_name,last_name,phone_no, order_url)
+                  try{
+                     sendSMStoResturantOwner(order_id);
+                     } catch(error){
+                    console.log(error);
+                  }
                   res.send(data.rows[0]);
                 })
                 .catch((err) => {
