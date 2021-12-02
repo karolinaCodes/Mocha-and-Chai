@@ -144,7 +144,7 @@ $(document).ready(() => {
         $("#customer-info").slideUp("slow");
         $(".Order_button").hide();
         $(".Total_Summary").hide();
-        $("button#remove-btn").hide();
+        $("#remove-btn").hide();
         $(".your-order").text("Order Placed");
         $("#sub-order-details").html(
           `<p>Order #: ${orderdetails.order_id}</p>
