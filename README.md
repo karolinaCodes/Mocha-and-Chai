@@ -1,4 +1,4 @@
-LHL Node Skeleton
+Mocha & Chai
 =========
 
 ## Project Setup

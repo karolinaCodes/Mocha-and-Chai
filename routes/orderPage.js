@@ -8,7 +8,7 @@ const express = require("express");
 const router = express.Router();
 const client = require("twilio")(process.env.ACCOUNTSID, process.env.AUTHTOKEN);
 
-const sendSMS = (first_name, order_url, order_id) => {
+const sendSMS = (first_name, order_id, order_url) => {
   //console.log("im in the sendSMS--");
   client.messages
     .create({
@@ -105,7 +105,7 @@ module.exports = (db) => {
                 .then((data) => {
                   console.log("order details table - success", data.rows);
                   try{
-                    sendSMS(first_name,last_name, order_url, order_id);
+                    sendSMS(first_name, order_id, order_url );
                   } catch(error){
                     console.log(error);
                   }
