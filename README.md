@@ -1,5 +1,7 @@
-LHL Node Skeleton
+Mocha & Chai
 =========
+
+!["TinyURL Page"](images/homeView.gif)
 
 ## Project Setup
 
