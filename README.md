@@ -2,7 +2,7 @@ Mocha & Chai
 =========
 
 ![](https://github.com/karolinaCodes/kar_public/blob/master/Dec-05-2021%2010-20-42.gif)
-![](https://github.com/karolinaCodes/kar_public2/blob/master/Dec-05-2021%2018-02-54.gif)
+![](https://github.com/karolinaCodes/menu-page-gif/blob/master/Dec-05-2021%2018-02-54.gif)
 
 
 ## Project Setup
