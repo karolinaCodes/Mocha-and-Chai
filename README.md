@@ -1,6 +1,8 @@
 Mocha & Chai
 =========
 
+![](https://github.com/karolinaCodes/kar_public/blob/master/Dec-05-2021%2010-20-42.gif)
+
 ## Project Setup
 
 The following steps are only for _one_ of the group members to perform.
@@ -41,5 +43,5 @@ The following steps are only for _one_ of the group members to perform.
 - Node 10.x or above
 - NPM 5.x or above
 - PG 6.x
-![](https://github.com/karolinaCodes/kar_public/blob/master/Dec-05-2021%2010-20-42.gif)
+
 
