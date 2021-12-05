@@ -42,12 +42,3 @@ The following steps are only for _one_ of the group members to perform.
 - NPM 5.x or above
 - PG 6.x
 
-
-https://user-images.githubusercontent.com/82968631/144720281-d381f662-2614-4720-931c-b8f3ef820bee.mp4
-
-
-
-https://user-images.githubusercontent.com/82968631/144720301-658be586-6005-478e-8d7c-5509829ed8f0.mp4
-
-
-https://user-images.githubusercontent.com/82968631/144720307-6e64eacf-dd16-4608-b08c-55b877c4e50d.mp4
