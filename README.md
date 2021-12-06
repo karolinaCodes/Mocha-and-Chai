@@ -1,7 +1,7 @@
 Mocha & Chai
 =========
 
-![](https://github.com/karolinaCodes/kar_public/blob/master/Dec-05-2021%2010-20-42.gif)
+![](https://github.com/karolinaCodes/home-page-gif/blob/master/Dec-05-2021%2010-20-42.gif)
 ![](https://github.com/karolinaCodes/menu-page-gif/blob/master/Dec-05-2021%2018-02-54.gif)
 ![](https://github.com/karolinaCodes/restaurant-page-gif/blob/master/Dec-05-2021%2018-09-05.gif)
 ![](https://github.com/karolinaCodes/order-accepted-gif/blob/master/Dec-05-2021%2018-19-32.gif)
