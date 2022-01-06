@@ -1,5 +1,7 @@
 Mocha & Chai
 =========
+A food & drink ordering app for a fictitious restaurant cafe called Mocha & Chai (kind of like the two well-known tools for unit testing).
+Our app uses Twilio to notify customers through SMS of accepted/ rejected orders and the restaurant of submitted orders.
 
 ![](https://github.com/karolinaCodes/home-page-gif/blob/master/Dec-05-2021%2010-20-42.gif)
 ![](https://github.com/karolinaCodes/menu-page-gif/blob/master/Dec-05-2021%2018-02-54.gif)
