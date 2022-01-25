@@ -7,9 +7,12 @@ Our app uses Twilio to notify customers through SMS of accepted/ rejected orders
 ![](https://github.com/karolinaCodes/menu-page-gif/blob/master/Dec-05-2021%2018-02-54.gif)
 ![](https://github.com/karolinaCodes/restaurant-page-gif/blob/master/Dec-05-2021%2018-09-05.gif)
 ![](https://github.com/karolinaCodes/order-accepted-gif/blob/master/Dec-05-2021%2018-19-32.gif)
+![CA279A76-5D1B-43FE-980E-B9FFE4BDC16B_1_201_a](https://user-images.githubusercontent.com/82968631/150898844-6590b5ce-39f3-4985-8024-7af02f277357.jpeg)
 
 
-## Project Setup
+
+## Project Setup!
+
 
 The following steps are only for _one_ of the group members to perform.
 
