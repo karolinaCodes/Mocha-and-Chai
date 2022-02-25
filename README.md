@@ -3,12 +3,17 @@ Mocha & Chai
 A food & drink ordering app for a fictitious restaurant cafe called Mocha & Chai (kind of like the two well-known tools for unit testing).
 Our app uses Twilio to notify customers through SMS of accepted/ rejected orders and the restaurant of submitted orders.
 
+## Landing Page
 ![](https://github.com/karolinaCodes/home-page-gif/blob/master/Dec-05-2021%2010-20-42.gif)
-![](https://github.com/karolinaCodes/menu-page-gif/blob/master/Dec-05-2021%2018-02-54.gif)
-![](https://github.com/karolinaCodes/restaurant-page-gif/blob/master/Dec-05-2021%2018-09-05.gif)
-![](https://github.com/karolinaCodes/order-accepted-gif/blob/master/Dec-05-2021%2018-19-32.gif)
-![CA279A76-5D1B-43FE-980E-B9FFE4BDC16B_1_201_a](https://user-images.githubusercontent.com/82968631/150898844-6590b5ce-39f3-4985-8024-7af02f277357.jpeg)
 
+## Menu Page
+![](https://github.com/karolinaCodes/menu-page-gif/blob/master/Dec-05-2021%2018-02-54.gif)
+
+## Restaurant Admin Login
+![](https://github.com/karolinaCodes/restaurant-page-gif/blob/master/Dec-05-2021%2018-09-05.gif)
+
+## Restaurant Admin Order Summary 
+![](https://github.com/karolinaCodes/order-accepted-gif/blob/master/Dec-05-2021%2018-19-32.gif)
 
 
 ## Project Setup!
